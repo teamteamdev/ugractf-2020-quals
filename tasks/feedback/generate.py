@@ -37,7 +37,7 @@ def generate():
             "review": emoji
         },
         "urls": []
-    }, sys.stdout)
+    }, sys.stdout, ensure_ascii=False)
 
 
 if __name__ == "__main__":
