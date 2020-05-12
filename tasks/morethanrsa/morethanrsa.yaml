@@ -1,0 +1,11 @@
+category: "crypto"
+name:     "Больше, чем RSA"
+points:   250
+author:   nsychev
+description: |
+    <p>Британские учёные выяснили, что RSA-512 недостаточно хорош.
+    Мы улучшили его в 1,5 раза. Сможете теперь расшифровать?</p>
+    <pre><code>n = {{ n }}
+    e = {{ e }}
+    ciphertext = {{ ciphertext }}</code></pre>
+generator: generate.py

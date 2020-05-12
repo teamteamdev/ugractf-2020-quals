@@ -5,7 +5,8 @@
 ## Таски
 
 [Отзыв](tasks/feedback/) (crypto 50)  
-[Великий математик](tasks/mathematician/) (reverse 150)
+[Великий математик](tasks/mathematician/) (reverse 150)  
+[Больше, чем RSA](tasks/morethanrsa/) (crypto 250)
 
 ## Команда соревнования
 
