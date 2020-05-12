@@ -7,7 +7,8 @@
 [Отзыв](tasks/feedback/) (crypto 50)  
 [Великий математик](tasks/mathematician/) (reverse 150)  
 [Больше, чем RSA](tasks/morethanrsa/) (crypto 250)  
-[Мой Кирпич](tasks/mybrick/) (web 200)
+[Мой Кирпич](tasks/mybrick/) (web 200)  
+[Домашняя страница](tasks/homepage/) (web 50)
 
 ## Команда соревнования
 
