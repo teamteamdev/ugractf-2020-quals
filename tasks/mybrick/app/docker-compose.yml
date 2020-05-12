@@ -5,6 +5,5 @@ services:
     environment:
       - "MONGO_INITDB_ROOT_USERNAME=root"
       - "MONGO_INITDB_ROOT_PASSWORD=verytopsecretpass123"
-      - "MONGO_INITDB_DATABASE=mybrick"
     ports:
       - "127.0.0.1:30017:27017"
