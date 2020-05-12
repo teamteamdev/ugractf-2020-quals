@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>Мой Кирпич</title>
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 18px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: url('http://source.unsplash.com/5Uh-wTSz-q0/640x479') repeat;
+}
+
+header {
+    background: #ffffff80;
+    padding: 3em 1em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+header h2 {
+    font-weight: normal;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
+input, textarea, button {
+    display: block;
+    width: 100%;
+    border: 1px solid #000000;
+    font: inherit;
+    margin-bottom: 0.5em;
+    padding: 0.2em;
+    color: #000000;
+}
+
+button:hover {
+    background: #ffffff;
+    color: #111111;
+}
+
+.or {
+    margin: 1em;
+    padding: 1.3em 1em;
+    background: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+}
+
+.or:hover {
+    background: #eeeeee;
+}
+
+main h2 {
+    text-align: center;
+}
+
+.post {
+    margin: 1em auto;
+    
+    width: 80%;
+    width: calc(100vw - 2em);
+
+    max-width: 600px;
+
+    padding: 1em;
+
+    background: #00000080;
+    border: 1px solid white;
+
+    color: white;
+}
+
+.post h3 {
+    margin-top: 0;
+}
+
+.post .meta {
+    font-size: 0.8em;
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.error {
+    text-align: center;
+    font-size: 2em;
+    color: #ff8080;
+}
+
+h1 {
+    animation: marcolor 4s infinite ease-in-out;
+}
+
+@keyframes marcolor {
+    0% {
+        color: white;
+    }
+
+    20% {
+        color: yellow;
+    }
+
+    40% {
+        color: green;
+    }
+
+    60% {
+        color: black;
+    }
+
+    80% {
+        color: blue;
+    }
+
+    100% {
+        color: white;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <marquee behavior="alternate" scrollamount="20" scrolldelay="40"><h1>Мой Кирпич</h1></marquee>
+        <h2>Первая анонимная социальная сеть для строителей!</h2>
+    </header>
+
+    <nav>
+        <form id="search">
+            <input type="text" id="search-field" placeholder="Поищите посты автора"/>
+        </form>
+        <div class="or">или</div>
+        <form method="POST" action="">
+            <input type="text" name="author" placeholder="Имя" />
+            <textarea name="text" placeholder="Новость"></textarea>
+            <button>Создать пост</button>
+        </form>
+    </nav>
+
+    <main>
+    </main>
+
+    <footer>
+        Copyright &copy; MyBrick 2020
+    </footer>
+
+    <script>
+const cleanMain = function() {
+    document.querySelector("main").innerHTML = "";
+}
+
+const addMainHeading = function(title) {
+    const heading = document.createElement("h2");
+    heading.innerText = title;
+    document.querySelector("main").appendChild(heading);
+}
+
+const addMainPost = function(post) {
+    const block = document.createElement("div");
+    block.className = "post";
+    const author = document.createElement("h3");
+    author.innerText = `${post.author} пишет:`;
+    const text = document.createElement("p");
+    text.innerText = post.text;
+    const date = document.createElement("p");
+    date.className = "meta";
+    date.innerText = post.date;
+    block.appendChild(author);
+    block.appendChild(text);
+    block.appendChild(date);
+    document.querySelector("main").appendChild(block);
+}
+
+const addMainNothing = function() {
+    const error = document.createElement("div");
+    error.className = "error";
+    error.innerText = "Ничего не нашлось...";
+    document.querySelector("main").appendChild(error);
+}
+
+const renderNews = function(title) {
+    return function(posts) {
+        cleanMain();
+        addMainHeading(title);
+        if (posts.length === 0) {
+            addMainNothing();
+        }
+        posts.forEach(addMainPost);
+    }
+}
+
+const getLatest = function() {
+    fetch("articles").then(r => r.json()).then(renderNews("Последние посты"));
+}
+
+const getBy = function(term) {
+    const query = {author: term};
+
+    fetch("articles", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(query)
+    }).then(r => r.json()).then(renderNews(`Посты от ${term}`));
+}
+
+window.onload = function() {
+    getLatest();
+
+    document.querySelector("#search").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const term = document.querySelector("#search-field").value.trim();
+        
+        if (term === "") {
+            getLatest();
+        } else {
+            getBy(term);
+        }
+        
+        return false;
+    })
+}
+    </script>
+</body>
+
+
+</html>
