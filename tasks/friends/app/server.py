@@ -253,6 +253,9 @@ def build_app():
             target_id = int(request.match_info['target_id'])
         except ValueError:
             raise web.HTTPBadRequest
+            
+        if user_id == target_id:
+            raise web.HTTPBadRequest
 
         async with aiosqlite.connect(DATABASE) as db:
             await get_user(target_id)
