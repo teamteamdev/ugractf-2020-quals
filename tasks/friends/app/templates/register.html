@@ -1,0 +1,16 @@
+{% extends "base_guest.html" %}
+
+{% block main %}
+<h2>Friends</h2>
+<p class="text-muted">Мы рады, что Вы выбрали именно наш сайт!</p>
+<form method="POST" action="">
+    <div class="form-group">
+    <label class="sr-only" for="login">Логин</label>
+    <input type="text" class="form-control" name="username" id="login" placeholder="Логин" required />
+    </div>
+    <p><button class="btn btn-primary">Далее</button></p>
+    <p><a href="login" class="btn btn-link">Есть аккаунт</a></p>
+    <p class="small text-muted">Нажимая на кнопку &laquo;Далее&raquo;, вы подтверждаете ознакомление
+    и соглашаетесь с условиями использования, политикой конфиденциальности, даёте согласие на обработку
+    ваших персональных данных и что-нибудь ещё, наши юристы потом допишут.</p>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base_auth.html" %}
+
+{% block main %}
+<h1>Анонимный пользователь {{ user.username }}</h1>
+
+<p>Зарегистрировался <strong>{{ user.created }}</strong>.</p>
+
+{% if note %}
+<div class="alert alert-warning">
+    <h3>Важное уведомление</h3>
+    <p>{{ note }}</p>
+</div>
+{% endif %}
+
+{% if personal %}
+<h2>Вход в аккаунт</h2>
+<div class="alert alert-danger">
+    Если вы не настроите приложение, то не сможете войти в аккаунт.
+</div>
+
+<p>Вам потребуется любое приложение для генерации одноразовых паролей, например
+Google Authenticator или Authy. Отсканируйте этот код для получения паролей:
+</p>
+<img src="../qr" class="qr" alt="QR-код" />
+
+{% else %}
+    {% if is_friend %}
+        {% if is_friend_of %}
+            <p>Вы с <strong>{{ user.username }}</strong> друзья.</p>
+            <form method="POST"><button class="btn btn-danger">Прекратить</button></form>
+        {% else %}
+            <p>Вы подали заявку в друзья.</p>
+            <form method="POST"><button class="btn btn-danger">Отозвать</button></form>
+        {% endif %}
+    {% else %}
+        {% if is_friend_of %}
+            <p><strong>{{ user.username }}</strong> подал заявку в друзья.</p>
+            <form method="POST"><button class="btn btn-success">Принять</button></form>
+        {% else %}
+        <p>Вы не друзья.</p>
+        <form method="POST"><button class="btn btn-success">Подружиться</button></form>
+        {% endif %}
+    {% endif %}
+{% endif %}
+{% endblock %}

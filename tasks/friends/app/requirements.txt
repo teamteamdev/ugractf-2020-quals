@@ -1,4 +1,5 @@
 aiohttp
 aiohttp_jinja2
 aiohttp_session
+aiosqlite
 qrcode[pil]

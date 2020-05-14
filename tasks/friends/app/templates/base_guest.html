@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friends</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+        html {
+            font-size: 20px;
+        }
+        body {
+            padding: 1em;
+            display: flex;
+            min-height: 100vh;
+            background: var(--indigo);
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 500px;
+            max-width: calc(100% - 2em);
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 4px;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+{% block main %}
+{% endblock %}
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+    </main>
+</body>
+</html>

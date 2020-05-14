@@ -35,7 +35,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://auth.ugractf.ru/{token}/"]
+        "urls": [f"https://friends.ugractf.ru/{token}/"]
     }, sys.stdout)
 
 

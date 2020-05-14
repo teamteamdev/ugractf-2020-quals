@@ -1,0 +1,14 @@
+{% extends "base_guest.html" %}
+
+{% block main %}
+<h2>Friends</h2>
+<p class="text-muted">Добро пожаловать</p>
+<form method="POST" action="">
+    <div class="form-group">
+    <label class="sr-only" for="login">Логин</label>
+    <input type="text" class="form-control" name="username" id="login" placeholder="Логин" required />
+    </div>
+    <p><button class="btn btn-primary">Войти</button></p>
+    <p><a href="register" class="btn btn-link">Нет аккаунта</a></p>
+</form>
+{% endblock %}
