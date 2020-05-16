@@ -32,15 +32,11 @@ SALT2_SIZE = 12
 
 
 def verify_token(token):
-    data = token.split('f', 1)
-    if len(data) != 2:
-        return False
+    left_token, right_token = token[:SALT1_SIZE], token[SALT1_SIZE:]
 
-    team_id, signature = data
-    
-    correct_signature = hmac.new(SECRET1, team_id.encode(), 'sha256').hexdigest()[:SALT1_SIZE]
+    signature = hmac.new(SECRET1, left_token.encode(), 'sha256').hexdigest()[:SALT1_SIZE]
 
-    return signature == correct_signature
+    return signature == right_token
 
 
 def get_flag(token):
