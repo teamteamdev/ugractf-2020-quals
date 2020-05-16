@@ -25,7 +25,7 @@ def generate():
 
     flag = get_flag()
 
-    binary = "".join([bin(ord(c))[2:].zfill(8) for c in flag])
+    binary = "".join([f'{ord(c):08b}' for c in flag])
 
     table = str.maketrans("01", ALPHABET)
     
