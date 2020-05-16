@@ -6,4 +6,4 @@ description: |
     <p>Мне не с кем пообщаться. Может быть вы поможете
     скрасить одиночество?</p>
 generator: generate.py
-daemon:    app/server.sh
+daemon:    app/server.py
