@@ -9,4 +9,4 @@ description: |
     <p>Говорят, что в одной из версий что-то спрятано.
     Сможете найти?</p>
 generator: generate.py
-daemon:    app/start_server.sh
+daemon:    app/server.py
