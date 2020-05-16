@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>На лечение</title>
+        <style>
+html {
+    font-size: 16px;
+    font-family: arial, verdana, sans-serif;
+}
+
+.error {
+    color: red;
+}
+        </style>
+    </head>
+    <booy>
+        <main>
+            {% if bot %}
+            <h1>Спасибо!</h1>
+            {% if not bot.username %}
+            <p>Подождите...</p>
+            <script>
+                setTimeout(function() {
+                    document.reload();
+                }, 5000);
+            </script>
+            {% else %}
+            <p>Я общаюсь с <strong>@{{ bot.username }}</strong></p>
+            <form action="delete" method="POST">
+                <button>Остановись</button>
+            </form>
+            {% endif %}
+            {% else %}
+            <h1>Найди мне собеседника</h1>
+            <p>Мне нужно кому-то рассказать свои интересные истории и флаги.</p>
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            <form action="add" method="POST">
+                <input type="text" name="username" required placeholder="Telegram @username"/>
+                <button>OK</button>
+            </form>
+            {% endif %}
+        </main>
+    </booy>
+</html>

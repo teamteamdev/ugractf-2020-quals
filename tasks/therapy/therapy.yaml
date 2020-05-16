@@ -1,0 +1,9 @@
+category: "ppc"
+name:     "На лечение"
+points:   150
+author:   nsychev
+description: |
+    <p>Мне не с кем пообщаться. Может быть вы поможете
+    скрасить одиночество?</p>
+generator: generate.py
+daemon:    app/server.sh
