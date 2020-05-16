@@ -265,7 +265,7 @@ def start():
     if os.environ.get('DEBUG') == 'F':
         web.run_app(app, host='0.0.0.0', port=31337)
     else:
-        web.run_app(app, path=os.path.join(sys.argv[1], 'friends.sock'))
+        web.run_app(app, path=os.path.join(sys.argv[1], 'therapy.sock'))
 
 
 if __name__ == '__main__':
