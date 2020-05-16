@@ -44,7 +44,7 @@ async def init_database():
         )''')
 
         await db.execute('''INSERT OR IGNORE INTO users (id, username, password, created) VALUES
-            (1, 'admin', '*', '2020-05-12 03:13:37')''')
+            (1, 'epicleeter', '*', '2020-05-12 03:13:37')''')
 
         await db.execute('''CREATE TABLE IF NOT EXISTS passwords (
             id INTEGER PRIMARY KEY,
@@ -201,7 +201,7 @@ def build_app():
         encrypted = bytearray([
             i ^ j for i, j in zip(COOKIE_SECRET, payload)
         ])
-        
+
         session = base64.b64encode(encrypted).decode()
         
         raise web.HTTPSeeOther(f'/{token}/passwords', headers={
