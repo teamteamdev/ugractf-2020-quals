@@ -9,7 +9,8 @@
 [Больше, чем RSA](tasks/morethanrsa/) (crypto 250)  
 [Мой Кирпич](tasks/mybrick/) (web 200)  
 [Домашняя страница](tasks/homepage/) (web 50)  
-[Друзья](tasks/friends/) (web 250)
+[Друзья](tasks/friends/) (web 250)  
+[На лечение](tasks/therapy/) (ppc 150)
 
 ## Команда соревнования
 
