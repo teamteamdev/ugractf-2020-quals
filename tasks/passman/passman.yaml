@@ -1,0 +1,15 @@
+category: "web"
+name:     "Менеджер паролей"
+points:   300
+author:   nsychev
+description: |
+    <p>Компания <em>All Secure System</em> выпустила
+    собственный парольный менеджер.
+    <p>Отзыв клиента <i>epicleeter</i>: Наконец-то я смог
+    сохранить все свои пароли в одном месте — компания
+    <em>All Secure Systems</em> создала свой надёжный и
+    безопасный менеджер паролей.</p>
+    <p>Действительно ли это реальный пользователь сайта
+    или отзыв фейковый?</p>
+generator: generate.py
+daemon:    app/server.py
