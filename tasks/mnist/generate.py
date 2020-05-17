@@ -42,11 +42,12 @@ def generate():
     font = PIL.ImageFont.load(os.path.join("private", "ter-u14b_iso-8859-1.pil"))
 
     image = PIL.Image.new("RGB", (len(flag) * 8 + 1, 14))
+    freqs = [random.randint(20, 50) * 0.001 for _ in range(3)]
     for x in range(image.size[0]):
         for y in range(image.size[1]):
-            image.putpixel((x, y), tuple(int(127 + c * 127) for c in [math.sin(30 + 0.03 * (2 * x + 3 * y)),
-                                                                      math.sin(40 + 0.04 * (4 * x - 1 * y)),
-                                                                      math.sin(50 + 0.02 * (5 * x - 8 * y))]))
+            image.putpixel((x, y), tuple(int(127 + c * 127) for c in [math.sin(30 + freqs[0] * (2 * x + 3 * y)),
+                                                                      math.sin(40 + freqs[1] * (4 * x - 1 * y)),
+                                                                      math.sin(50 + freqs[2] * (5 * x - 8 * y))]))
 
     text_image = PIL.Image.new("RGB", (len(flag) * 8 + 1, 14))
     draw = PIL.ImageDraw.ImageDraw(text_image)
