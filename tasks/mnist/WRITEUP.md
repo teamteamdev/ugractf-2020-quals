@@ -1,5 +1,5 @@
-# Формулы: Write-up
+# Мнистерство статистики: Write-up
 
 TODO.
 
-Флаг: **ugra_school_informatics_isnt_that_useless_61eb16d744ec**.
+Флаг: **ugra_apply_now_for_senior_ai_researcher_3493f0ce89**.
