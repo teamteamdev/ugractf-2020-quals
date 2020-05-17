@@ -58,7 +58,6 @@ def generate():
             if text_image.getpixel((x, y)) == (255, 255, 255):
                 image.putpixel((x, y), tuple(255 - c for c in image.getpixel((x, y))))
     
-    image = image.convert("P", palette=PIL.Image.WEB)
     image_io = io.BytesIO()
     image.save(image_io, format="BMP")
 
@@ -67,7 +66,7 @@ def generate():
     with tempfile.TemporaryDirectory() as temp_dir:
         with open(os.path.join(temp_dir, "1.svg"), "w") as svg:
             R = re.compile("-?\d+\.\d+")
-            LINE_LENGTH = 74  # BMP size is known to be divisible by this number
+            LINE_LENGTH = 89  # BMP size is known to be divisible by this number
             svg.write(f"""<?xml version="1.0" encoding="UTF-8" standalone="no"?>
                           <svg xmlns="http://www.w3.org/2000/svg" width="{28 * 3 * LINE_LENGTH}"
                                                                   height="{28 * len(data) // LINE_LENGTH}">\n"""
