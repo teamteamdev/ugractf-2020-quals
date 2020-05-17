@@ -12,6 +12,7 @@
 [Друзья](tasks/friends/) (web 250)  
 [На лечение](tasks/therapy/) (ppc 150)  
 [Менеджер паролей](tasks/passman/) (web 300)
+[Формулы](tasks/formulae/) (reverse 150)
 
 ## Команда соревнования
 
