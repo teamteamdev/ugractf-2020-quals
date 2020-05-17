@@ -1,0 +1,7 @@
+category: "crypto"
+name:     "noteasy₅"
+points:   50
+author:   kalan
+description: |
+    <img src="public/noteasy5.svg">
+generator: generate.py

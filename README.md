@@ -14,6 +14,7 @@
 [Менеджер паролей](tasks/passman/) (web 300)
 [Формулы](tasks/formulae/) (reverse 150)
 [Мнистерство статистики](tasks/mnist/) (ppc 350)
+[noteasy₅](tasks/noteasy5/) (crypto 50)
 
 ## Команда соревнования
 
