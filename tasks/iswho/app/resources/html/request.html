@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<HTML>
+  <HEAD>
+    <META charset="utf-8">
+    <TITLE>IS WHO - паутина сокрытия - свобода whois база данных - изучите знание тайн -</TITLE>
+    <STYLE>
+    </STYLE>
+  </HEAD>
+  <BODY style="font-family: verdana; font-size: 10px;">
+    <DIV class="content" style="
+                                background: url('/img/bg.jpg') no-repeat;
+                                background-size: 100% 120px;
+                                width: 600px;
+                                padding: 10px 50px; margin: 50px auto;">
+      <br>
+      <div class="logo" align="center" style="mix-blend-mode: multiply;">
+        <img src="/img/header.jpg">
+      </div>
+      <p align="center"><a href="">&lt;----- еще раз</a></p>
+      <div class="main" style="background: #FFF8E6; border: 1px solid #FF7A00; padding: 10px;">
+        <div>
+        {% if result %}
+        <h2 style="color: #090">Результат</h2>
+        <pre><code>{{result}}</code></pre>
+        {% else %}
+        <h2 style="color: #900">Ошибка</h2>
+        <p>{{error}}</p>
+        {% endif %}
+        </div>
+      </div>
+    </DIV>
+    <p align="center">Copyright (C) creator of is who web site</p>
+  </BODY>
+</HTML>

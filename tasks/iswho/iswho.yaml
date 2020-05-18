@@ -1,0 +1,8 @@
+category: "web"
+name:     "Кто"
+points:   100
+author:   vanya
+description: |
+    <p>«В хозяйстве пригодится!» — подумал я и добавил этот сайт в закладки.
+generator: generate.py
+daemon:    app/start_server.sh
