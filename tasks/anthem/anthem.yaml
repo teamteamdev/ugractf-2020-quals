@@ -1,0 +1,7 @@
+category: "stegano"
+name:     "Гимн года"
+points:   50
+author:   kalan
+description: |
+    Вашему вниманию предлагается <em>гимн 2020 года</em>.
+generator: generate.py

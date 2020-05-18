@@ -15,6 +15,7 @@
 [Формулы](tasks/formulae/) (reverse 150)
 [Мнистерство статистики](tasks/mnist/) (ppc 350)
 [noteasy₅](tasks/noteasy5/) (crypto 50)
+[Гимн года](tasks/anthem/) (stegano 50)
 
 ## Команда соревнования
 
