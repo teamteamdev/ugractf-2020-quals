@@ -93,20 +93,15 @@ def generate():
         p = generate_prime_number(16)
         q = generate_prime_number(376)
 
-        print("p, q")
-        
         r = q + generate_prime_number(42) + 1
         while not is_prime(r):
             r += 2
-            print(".", end='')
-        print("\rr")
+        
         phi = (p - 1) * (q - 1) * (r - 1)
         e = 65537
 
         if math.gcd(e, phi) == 1:
             break
-            
-        print("fail")
 
     n = p * q * r
     d = modinv(e, phi)
