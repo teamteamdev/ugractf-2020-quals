@@ -11,11 +11,11 @@
 [Домашняя страница](tasks/homepage/) (web 50)  
 [Друзья](tasks/friends/) (web 250)  
 [На лечение](tasks/therapy/) (ppc 150)  
-[Менеджер паролей](tasks/passman/) (web 300)
-[Формулы](tasks/formulae/) (reverse 150)
-[Мнистерство статистики](tasks/mnist/) (ppc 350)
-[noteasy₅](tasks/noteasy5/) (crypto 50)
-[Гимн года](tasks/anthem/) (stegano 50)
+[Менеджер паролей](tasks/passman/) (web 300)  
+[Формулы](tasks/formulae/) (reverse 150)  
+[Мнистерство статистики](tasks/mnist/) (ppc 350)  
+[noteasy₅](tasks/noteasy5/) (crypto 50)  
+[Гимн года](tasks/anthem/) (stegano 50)  
 
 ## Команда соревнования
 
