@@ -17,4 +17,5 @@ description: |
     <p>Ваш личный токен: <code>{{ token }}</code></p>
 generator: generate.py
 multi_generator: true
-daemon:    app/start_server.sh
+daemon: app/start_server.sh
+attachments_path: public/

@@ -17,3 +17,4 @@ description: |
     <p>Ваш личный токен: <code>{{ token }}</code></p>
 generator: ../press1/generate.py
 multi_generator: true
+attachments_path: public/
