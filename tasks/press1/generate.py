@@ -40,8 +40,8 @@ def get_flag(i, token):
 
 
 def generate():
-    if len(sys.argv) != 3:
-        print("Usage: generate.py user_id target_dir", file=sys.stderr)
+    if len(sys.argv) != 4:
+        print("Usage: generate.py user_id target_dir tasks", file=sys.stderr)
         sys.exit(1)
 
     token = get_token()
