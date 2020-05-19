@@ -18,7 +18,7 @@ SECRET2 = b"file-edit-options-buffers-tools-python-help"
 SALT2_SIZE = 12
 
 FACTORY_CODES = ["7273", "2323"]
-FLAT_CODES = ["200", "300", "400", "500", "600", "700"]
+FLAT_CODES = ["200"]
 
 
 class Eltis:
