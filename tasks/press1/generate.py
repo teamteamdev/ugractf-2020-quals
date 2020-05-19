@@ -9,23 +9,34 @@ import random
 import sys
 import tempfile
 
-PREFIX = "ugra_nullptr_is_a_zero_"
-SECRET1 = b"snap-rubbish-fail-block-technique"
-SALT1_SIZE = 16
-SECRET2 = b"rough-limited-talented-software-snatch"
-SALT2_SIZE = 12
+TASKS = ["press1", "press2"]
+
+PREFIX = [
+    "ugra_nullptr_is_a_zero_",
+    "ugra_zerobyte_does_not_count_"
+]
+
+TOKEN_SECRET = b"snap-rubbish-fail-block-technique"
+TOKEN_SALT_SIZE = 16
+
+FLAG_SECRET = [
+    b"rough-limited-talented-software-snatch",
+    b"marathon-version-account-bottom-deer"
+]
+FLAG_SALT_SIZE = 12
 
 
-def get_user_tokens():
+def get_token():
     user_id = sys.argv[1]
 
-    token1 = hmac.new(SECRET1, str(user_id).encode(), "sha256").hexdigest()[:SALT1_SIZE]
-    token2 = hmac.new(SECRET1, token1.encode(), "sha256").hexdigest()[:SALT1_SIZE]
-    token = token1 + token2
+    token1 = hmac.new(TOKEN_SECRET, str(user_id).encode(), "sha256").hexdigest()[:TOKEN_SALT_SIZE]
+    token2 = hmac.new(TOKEN_SECRET, token1.encode(), "sha256").hexdigest()[:TOKEN_SALT_SIZE]
+    
+    return token1 + token2
 
-    flag = PREFIX + hmac.new(SECRET2, token.encode(), "sha256").hexdigest()[:SALT2_SIZE]
 
-    return token, flag
+def get_flag(i, token):
+    return PREFIX[i] + hmac.new(FLAG_SECRET[i], token.encode(), "sha256").hexdigest()[:FLAG_SALT_SIZE]
 
 
 def generate():
@@ -33,12 +44,18 @@ def generate():
         print("Usage: generate.py user_id target_dir", file=sys.stderr)
         sys.exit(1)
 
-    token, flag = get_user_tokens()
-
+    token = get_token()
+    
+    
     json.dump({
-        "flags": [flag],
-        "substitutions": {"token": token},
-        "urls": []
+        TASKS[i]: {
+            "flags": [get_flag(i, token)],
+            "substitutions": {
+                "token": token
+            },
+            "urls": []
+        }
+        for i in range(2)
     }, sys.stdout)
 
 

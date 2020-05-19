@@ -16,4 +16,5 @@ description: |
     <p><code>nc melodrama.ugractf.ru 17493</code></p>
     <p>Ваш личный токен: <code>{{ token }}</code></p>
 generator: generate.py
+multi_generator: true
 daemon:    app/start_server.sh

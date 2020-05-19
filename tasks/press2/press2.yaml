@@ -15,4 +15,5 @@ description: |
     вам удастся заполучить автограф?</p>
     <p><code>nc melodrama.ugractf.ru 17493</code></p>
     <p>Ваш личный токен: <code>{{ token }}</code></p>
-generator: generate.py
+generator: ../press1/generate.py
+multi_generator: true
