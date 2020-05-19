@@ -16,6 +16,8 @@
 [Мнистерство статистики](tasks/mnist/) (ppc 350)  
 [noteasy₅](tasks/noteasy5/) (crypto 50)  
 [Гимн года](tasks/anthem/) (stegano 50)  
+[Melodrama I](tasks/press1/) (ppc 150)  
+[Melodrama II](tasks/press2/) (ppc 250)
 
 ## Команда соревнования
 
