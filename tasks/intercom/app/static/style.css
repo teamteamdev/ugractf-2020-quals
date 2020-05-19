@@ -1,0 +1,105 @@
+body {
+    width: 575px;
+    min-height: 346px;
+    margin: 7em auto;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.behind {
+    width: 575px;
+    height: 342px;
+    margin-top: 3px;
+    position: absolute;
+    font-weight: bold;
+    font-family: monospace;
+    color: #fff;
+    background: #000;
+    opacity: 0;
+    transition: opacity .25s;
+    display: flex;
+    align-items: center;
+}
+
+.behind-visible {
+    opacity: 1;
+}
+
+#text {
+    width: 100%;
+    text-align: center;
+}
+
+.body {
+    background: url('/static/body.svg') no-repeat 100% 100%;
+    width: 575px;
+    height: 346px;
+    position: relative;
+    transform-origin: right;
+    transition: transform 2s ease-in;
+}
+
+.body-open {
+    pointer-events: none;
+    transform: perspective(1200px)
+               translateZ(0px)
+               translateX(0px)
+               translateY(0px)
+               rotateY(105deg)
+               skewY(30deg);
+}
+
+.display {
+    font-family: Segment7, monospace;
+    font-size: 36px;
+    color: #f00;
+    text-shadow: 0 0 2px #f005;
+    position: absolute;
+    top: 78px;
+    left: 98px;
+}
+
+.display-digits {
+    position: relative;
+}
+
+.display-under, .display-over {
+    position: absolute;
+}
+
+.display-under {
+    opacity: .2;
+    user-select: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 27px;
+    grid-row-gap: 13px;
+    height: 183px;
+    width: 162px;
+    position: absolute;
+    left: 268px;
+    top: 101px;
+}
+
+button {
+    -webkit-appearance: none;
+    opacity: 0;
+    border-radius: 50%;
+    border: none;
+    background: #551d10;
+    mix-blend-mode: multiply;
+}
+
+button:active {
+    opacity: 0.1;
+    margin: 1px;
+}
+
+.title {
+    display: block;
+    margin: 5em auto 1em;
+}

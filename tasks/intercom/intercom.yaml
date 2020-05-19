@@ -1,0 +1,8 @@
+category: "recon"
+name:     "Домофон"
+points:   100
+author:   vanya
+description: |
+    <p>ВАШИ ДРУЗЬЯ-ФИЛОСОФЫ ПРИГЛАСИЛИ ВАС НА ПОСТ-МОДЕРН ВЕЧЕРИНКУ. ПРИХОДИТЕ.
+generator: generate.py
+daemon:    app/server.py
