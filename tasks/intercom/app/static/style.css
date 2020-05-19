@@ -1,3 +1,8 @@
+@font-face {
+  font-family: eltis;
+  src: url(/static/eltis.otf);
+}
+
 body {
     width: 575px;
     min-height: 346px;
@@ -50,7 +55,7 @@ body {
 }
 
 .display {
-    font-family: Segment7, monospace;
+    font-family: eltis, monospace;
     font-size: 36px;
     color: #f00;
     text-shadow: 0 0 2px #f005;
