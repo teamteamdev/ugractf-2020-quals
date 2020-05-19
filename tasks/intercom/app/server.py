@@ -122,7 +122,6 @@ def build_app():
         async for msg in ws:
             if msg.type == aiohttp.WSMsgType.TEXT:
                 await ws.send_str(eltis.handle(msg.data))
-                print(eltis.mode, eltis.display, eltis.stage)
             elif msg.type == aiohttp.WSMsgType.ERROR:
                 return ws
 
