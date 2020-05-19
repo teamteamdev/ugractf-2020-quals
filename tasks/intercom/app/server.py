@@ -54,7 +54,7 @@ class Eltis:
     def code(self):
         self.reset()
         self.mode = 'code'
-        return "D:C0d3"
+        return "D:C0dE"
     
     def handle(self, btn):
         length = len(self.display)

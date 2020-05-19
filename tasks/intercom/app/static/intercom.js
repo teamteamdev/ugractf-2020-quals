@@ -22,7 +22,7 @@ const msgHouse = e => {
             display(data[1]);
             break;
         case 'F':
-            display("OP3N,");
+            display("OPEN,");
             openSnd.play();
             document.querySelector('.body').classList.add('body-open');
             document.querySelector('.behind').classList.add('behind-visible');
