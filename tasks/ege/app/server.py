@@ -12,7 +12,7 @@ GRAM = {
     }
 
 BASE_DIR = os.path.dirname(__file__)
-MAX_SCORE = 1
+MAX_SCORE = 7331
 MAX_ERRORS = 3
 
 PREFIX = "ugra_durnytsya_dribnitsya_"
