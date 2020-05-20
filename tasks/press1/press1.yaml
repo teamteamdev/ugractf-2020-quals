@@ -13,7 +13,7 @@ description: |
     <p>Недавно стало известно, что сотрудники
     топ-менеджмента Мелодрамы тайно писали заметки
     для другого СМИ. Сможете выяснить, что там было?</p>
-    <p><code>nc melodrama.ugractf.ru 17493</code></p>
+    <p><code>nc melodrama.q.2020.ugractf.ru 17493</code></p>
     <p>Ваш личный токен: <code>{{ token }}</code></p>
 generator: generate.py
 multi_generator: true

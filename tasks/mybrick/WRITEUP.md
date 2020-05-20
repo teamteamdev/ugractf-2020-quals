@@ -29,20 +29,20 @@
 Проверим это, например, передав лишний параметр:
 
 ```
-$ curl -X POST -H "Content-Type: application/json" https://mybrick.ugractf.ru/943a294a82819e3defdef052640c2989/articles --data '{"author": "ivan", "bad": true}'
+$ curl -X POST -H "Content-Type: application/json" https://mybrick.q.2020.ugractf.ru/943a294a82819e3defdef052640c2989/articles --data '{"author": "ivan", "bad": true}'
 []
 ```
 
 Ничего не нашлось. Вероятно, наше поле попало в запрос. Более сложные условия, чем сравнения, в MongoDB выполняются с помощью [*операторов запроса*](https://docs.mongodb.com/manual/reference/operator/). Попробуем, например, оператор `$ne` — неравенство:
 
 ```
-$ curl -X POST -H "Content-Type: application/json" https://mybrick.ugractf.ru/943a294a82819e3defdef052640c2989/articles --data '{"author": {"$ne": "ivan"}}'
+$ curl -X POST -H "Content-Type: application/json" https://mybrick.q.2020.ugractf.ru/943a294a82819e3defdef052640c2989/articles --data '{"author": {"$ne": "ivan"}}'
 ```
 
 В ответ приходят 5 постов — действительно, мы не видим пост Ивана, но видим ещё один пост от `nagibator1972`. Можно воспользоваться оператором `$nin` и исключить все лишние записи, а можно воспользоваться оператором `$regex` — пост с флагом, скорее всего, содержит `ugra`:
 
 ```
-$ curl -X POST -H "Content-Type: application/json" https://mybrick.ugractf.ru/943a294a82819e3defdef052640c2989/articles --data '{"text": {"$regex": "ugra"}}'
+$ curl -X POST -H "Content-Type: application/json" https://mybrick.q.2020.ugractf.ru/943a294a82819e3defdef052640c2989/articles --data '{"text": {"$regex": "ugra"}}'
 ```
 
 Мы сразу же получаем пост с флагом.

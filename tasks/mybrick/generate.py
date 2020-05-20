@@ -38,7 +38,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://mybrick.ugractf.ru/{token}/"]
+        "urls": [f"https://mybrick.q.2020.ugractf.ru/{token}/"]
     }, sys.stdout)
 
 
