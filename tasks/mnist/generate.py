@@ -83,7 +83,9 @@ def generate():
                     svg.write("</g>\n")
             svg.write("</svg>")
         # or probably: dbus-run-session inkscape -z -e ...
-        subprocess.check_call(["inkscape", "-z", "-e", os.path.join(target_dir, "mnistry-data.png"), os.path.join(temp_dir, "1.svg")])
+        subprocess.check_call(["inkscape", "-z", "-e",
+                               os.path.join(target_dir, "mnistry-data.png"), os.path.join(temp_dir, "1.svg")],
+                              stdout=sys.stderr)
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
 
