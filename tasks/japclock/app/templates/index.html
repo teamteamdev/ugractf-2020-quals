@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>日本国の祝賀会</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background: white; padding: 1em; margin: 0 auto; max-width: 40em;
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 24px;
+                text-align: center;
+                font-weight: 300;
+            }
+            input { font: inherit; }
+            .f-3 { width: 3em; } .f-2 { width: 2em; }
+            strong, h1 { color: red; font-weight: 900; }
+            form {
+                border-top: 1px solid #888;
+                padding: 0.5em 0 0;
+                margin: 2em 0 0;
+            }
+            a {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        {% if flag %}
+            <h1>おめでとう！</h1>
+            <p>指定した座標は、時計から５メートル未満の地点を指します。</p>
+            <p>答えは受け入れられ、旗が授与されます。</p>
+            <p><strong>ユグラ・アルバイト・トランプ・パソコン・{{ flag }}</strong></p>
+        {% elif rate_error %}
+            <h1>リクエストが多すぎる！</h1>
+            <p>力ずくで正しい解決策を見つけようとしないでください。</p>
+            <p><a href=".">もう一度お試し</a>ください。ただし、ブルートフォースは使用しないでください。</p>
+        {% elif location_error %}
+            <h1>これは遠すぎます！</h1>
+            <p>指定した座標は、時計から５メートル以上離れた点を参照しています。</p>
+            <p>そのような答えは受け入れられません。</p>
+            <p><a href=".">もう一度お試し</a>ください。</p>
+        {% elif presentation_error %}
+            <h1>プレゼンテーションエラー！</h1>
+            <p>フォームに正しく入力されていません。</p>
+            <p>答えを確認できませんでした。</p>
+            <p><a href=".">もう一度お試し</a>ください。</p>
+        {% else %}
+            <h1>日本国の祝賀会</h1>
+            <p>２００９年１月１日、特定の人々がこのイベントを祝いました。</p>
+            <iframe width="720" height="480" src="https://www.youtube-nocookie.com/embed/PJ4TWChcKpI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>このビデオはどこで撮られましたか？</p>
+            <p><strong>フォームのすべてのフィールドに正しく入力してください。</strong></p>
+            <p>カメラ位置の座標ではなく、時計自体の座標を入力してください。</p>
+            <p><strong>注意</strong>：許容範囲は<strong>５メートル</strong>です。これは非常に厳しい要件であると理解していますが、それは絶対に必要です。 ご不便をおかけしましたことをお詫び申し上げます。</p>
+            <p>フォームに記入するときは、全角数字のみを使用してください。</p>
+            <p>その他の文字は使用<strong>できません</strong>。</p>
+            <form method="POST" action="verify">
+                <p><label for="lad">北緯の度：</label><input id="lad" name="lad" class="f-3" value="" />
+                   <label for="lam">北緯の分：</label><input id="lam" name="lam" class="f-2" value="" />
+                   <label for="las">北緯の秒：</label><input id="las" name="las" class="f-2" value="" />
+                   <label for="lac">北緯のセンチ秒：</label><input id="lac" name="lac" class="f-2" value=""></p>
+                <p><label for="lod">東経の度：</label><input id="lod" name="lod" class="f-3" value="" />
+                   <label for="lom">東経の分：</label><input id="lom" name="lom" class="f-2" value="" />
+                   <label for="los">東経の秒：</label><input id="los" name="los" class="f-2" value="" />
+                   <label for="loc">東経のセンチ秒：</label><input id="loc" name="loc" class="f-2" value="" /></p>
+                <input type="submit" value="フォームを送信する" />
+            </form>
+        {% endif %}
+    </body>
+</html>

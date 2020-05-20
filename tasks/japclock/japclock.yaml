@@ -1,0 +1,9 @@
+category: "recon"
+name:     "Праздник в Японии"
+points:   200
+author:   kalan
+description: |
+    <p>Раз в несколько лет, а если повезёт, то и дважды в год, 1 января или 1 июля японцы празднуют <em>это</em>.</p>
+    <p>Чтобы тоже стать причастным к празднику, вам нужно заполнить форму.</p>
+generator: generate.py
+daemon:    app/server.py
