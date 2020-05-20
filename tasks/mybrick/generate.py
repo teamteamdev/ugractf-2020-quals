@@ -29,7 +29,7 @@ def get_user_tokens():
 
 
 def generate():
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print("Usage: generate.py user_id target_dir", file=sys.stderr)
         sys.exit(1)
 

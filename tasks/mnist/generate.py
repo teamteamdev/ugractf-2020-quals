@@ -23,7 +23,7 @@ def get_flag():
 
 
 def generate():
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print("Usage: generate.py user_id target_dir", file=sys.stderr)
         sys.exit(1)
     user_id = sys.argv[1]
