@@ -325,6 +325,11 @@ void delete_article() {
     puts("Enter article ID:");
     scanf("%d", &id);
 
+    if (id < 0 || id >= ARTICLES || !articles[id]) {
+        puts("No such article.");
+        return;
+    }
+
     memset(articles[id], NULL, sizeof(article_t*));
 }
 
@@ -420,7 +425,7 @@ void init_app() {
 
 int main(int argc, char** argv) {
     setbuf(stdout, NULL);
-    // alarm(30);
+    alarm(30);
 
     puts(WELCOME_MESSAGE);
     init_app();
