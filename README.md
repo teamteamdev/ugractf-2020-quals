@@ -20,6 +20,7 @@
 [Melodrama II](tasks/press2/) (ppc 250)  
 [Домофон](tasks/intercom/) (recon 100)  
 [Кто](tasks/iswho/) (web 100)  
+[ЕГЭ](tasks/ege/) (ppc 350)  
 
 ## Команда соревнования
 
