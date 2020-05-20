@@ -133,7 +133,6 @@ void add_edit_insert(int id) {
             edits[i]->article = id;
             edits[i]->type = INSERT;
             edits[i]->offset = offset;
-            // should I use strlen() here?
             edits[i]->count = read;
             edits[i]->content = malloc(141);
             strcpy(edits[i]->content, content);
