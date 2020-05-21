@@ -36,7 +36,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://japclock.q.2020.ugractf.ru/{token}/"]
+        "urls": [f"https://japclock.HOSTNAME/{token}/"]
     }, sys.stdout)
 
 
