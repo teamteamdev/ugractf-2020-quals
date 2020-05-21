@@ -1,0 +1,7 @@
+category: "stegano"
+name:     "Гимн года: продолжение"
+points:   200
+author:   kalan
+description: |
+    <p>Вашему вниманию <em>снова</em> предлагается <em>гимн 2020 года</em>. (Да, это меташутка. Нет, не надо, спасибо.)</p>
+generator: generate.py
