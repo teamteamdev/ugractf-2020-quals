@@ -6,3 +6,4 @@ description: |
     <p>Как вы думаете, можно ли закодировать информацию в бесконечном потоке нулевых байтов? Этим ребятам, похоже, удалось.</p>
 generator: generate.py
 daemon:    app/server.py
+daemon_socket: "devzero.sock"

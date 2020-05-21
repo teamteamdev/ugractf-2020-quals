@@ -7,3 +7,4 @@ description: |
     <p>Чтобы тоже стать причастным к празднику, вам нужно заполнить форму.</p>
 generator: generate.py
 daemon:    app/server.py
+daemon_socket: "japclock.sock"
