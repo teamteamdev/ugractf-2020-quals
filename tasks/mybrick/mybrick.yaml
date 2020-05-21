@@ -8,4 +8,5 @@ description: |
     авторизации, а старые посты и вовсе исчезают бесследно.
     Присоединяйтесь!</p>
 generator: generate.py
-daemon:    app/start_server.sh
+daemon: app/start_server.sh
+daemon_socket: mybrick.sock

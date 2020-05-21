@@ -9,8 +9,6 @@ import random
 import sys
 import tempfile
 
-TASKS = ["press1", "press2"]
-
 PREFIX = [
     "ugra_nullptr_is_a_zero_",
     "ugra_zerobyte_does_not_count_"
@@ -48,7 +46,7 @@ def generate():
     
     
     json.dump({
-        TASKS[i]: {
+        f"melodrama{i}": {
             "flags": [get_flag(i, token)],
             "substitutions": {},
             "urls": [],

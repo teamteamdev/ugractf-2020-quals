@@ -61,7 +61,7 @@ def main():
 
     print(BASE_DIR)
 
-    binary = os.path.join(BASE_DIR, "press")
+    binary = os.path.join(BASE_DIR, "melodrama")
     os.execve(binary, [binary], {})
 
 

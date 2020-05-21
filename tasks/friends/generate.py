@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 
 import codecs
@@ -35,7 +36,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://friends.q.2020.ugractf.ru/{token}/"]
+        "urls": [f"https://friends.{{hostname}}/{token}/"]
     }, sys.stdout)
 
 

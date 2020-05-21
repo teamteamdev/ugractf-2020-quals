@@ -35,7 +35,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://passman.q.2020.ugractf.ru/{token}/"]
+        "urls": [f"https://passman.{{hostname}}/{token}/"]
     }, sys.stdout)
 
 

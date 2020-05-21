@@ -13,6 +13,7 @@ import sys
 from jinja2 import FileSystemLoader
 
 BASE_DIR = os.path.dirname(__file__)
+STATE_DIR = sys.argv[1] if len(sys.argv) >= 2 else BASE_DIR
 ADMIN_CREDS = ('root', 'verytopsecretpass123')
 MONGO_PATH = 'mongodb://{}:{}@localhost:30017/db?authSource=admin'
 
@@ -165,7 +166,7 @@ def start():
     if os.environ.get('DEBUG') == 'F':
         web.run_app(app, host='0.0.0.0', port=31337)
     else:
-        web.run_app(app, path=os.path.join(sys.argv[1], 'mybrick.sock'))
+        web.run_app(app, path=os.path.join(STATE_DIR, 'mybrick.sock'))
 
 
 if __name__ == '__main__':

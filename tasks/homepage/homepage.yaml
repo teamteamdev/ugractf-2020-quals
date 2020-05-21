@@ -9,4 +9,5 @@ description: |
     <p>Говорят, что в одной из версий что-то спрятано.
     Сможете найти?</p>
 generator: generate.py
-daemon:    app/server.py
+daemon: app/server.py
+daemon_socket: homepage.sock

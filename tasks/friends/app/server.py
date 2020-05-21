@@ -23,7 +23,8 @@ import time
 from jinja2 import FileSystemLoader
 
 BASE_DIR = os.path.dirname(__file__)
-DATABASE = os.path.join(os.environ.get("STATEDIR", BASE_DIR), "db.sqlite3")
+STATE_DIR = sys.argv[1] if len(sys.argv) >= 2 else BASE_DIR
+DATABASE = os.path.join(STATE_DIR, "db.sqlite3")
 
 PREFIX = "ugra_oh_no_totp_secret_leaked_"
 SECRET2 = b"reflect-implication-article-action-dominant"
@@ -365,7 +366,7 @@ def start():
     if os.environ.get('DEBUG') == 'F':
         web.run_app(app, host='0.0.0.0', port=31337)
     else:
-        web.run_app(app, path=os.path.join(sys.argv[1], 'friends.sock'))
+        web.run_app(app, path=os.path.join(STATE_DIR, 'friends.sock'))
 
 
 if __name__ == '__main__':

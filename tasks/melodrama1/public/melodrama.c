@@ -1,4 +1,4 @@
-// gcc -no-pie press.c -o press
+// gcc -no-pie melodrama.c -o melodrama
 
 #include <stdio.h>
 #include <stdlib.h>

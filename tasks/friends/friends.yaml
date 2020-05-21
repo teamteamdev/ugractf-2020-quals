@@ -8,4 +8,5 @@ description: |
     пытаются решить эту проблему и создать сервисы, где для
     входа пароль не нужен. Но что-то всё равно идёт не так…</p>
 generator: generate.py
-daemon:    app/server.py
+daemon: app/server.py
+daemon_socket: friends.sock

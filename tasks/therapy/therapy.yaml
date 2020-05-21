@@ -7,3 +7,5 @@ description: |
     скрасить одиночество?</p>
 generator: generate.py
 daemon:    app/server.py
+daemon_sock: therapy.sock
+daemon_isolate_net: false

@@ -1,6 +1,6 @@
 category: "pwn"
-name:     "Melodrama II"
-points:   250
+name:     "Melodrama I"
+points:   150
 author:   nsychev
 description: |
     <p>Твиттер-газета <em>Melodrama</em> выходит в 
@@ -10,9 +10,11 @@ description: |
     перед публикацией проходят жёсткий контроль
     с помощью специального приложения, исходный код
     которого нам удалось достать.</p>
-    <p>Говорят, у нового главного редактора такая
-    интересная подпись, но я её не видел. Может быть
-    вам удастся заполучить автограф?</p>
-generator: ../press1/generate.py
+    <p>Недавно стало известно, что сотрудники
+    топ-менеджмента Мелодрамы тайно писали заметки
+    для другого СМИ. Сможете выяснить, что там было?</p>
+generator: generate.py
 multi_generator: true
+daemon: app/start_server.sh
+daemon_isolate_net: false
 attachments_path: public/

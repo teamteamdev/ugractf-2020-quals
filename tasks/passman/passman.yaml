@@ -12,4 +12,5 @@ description: |
     <p>Действительно ли это реальный пользователь сайта
     или отзыв фейковый?</p>
 generator: generate.py
-daemon:    app/server.py
+daemon: app/server.py
+daemon_socket: passman.sock

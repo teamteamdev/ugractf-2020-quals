@@ -19,7 +19,7 @@ from jinja2 import FileSystemLoader
 import writingprompt
 
 BASE_DIR = os.path.dirname(__file__)
-STATE_DIR = os.environ.get("STATEDIR", BASE_DIR)
+STATE_DIR = sys.argv[1] if len(sys.argv) >= 2 else BASE_DIR
 DATABASE = os.path.join(STATE_DIR, "db.sqlite3")
 
 HAPPY_NUMBER = 123
@@ -265,7 +265,7 @@ def start():
     if os.environ.get('DEBUG') == 'F':
         web.run_app(app, host='0.0.0.0', port=31337)
     else:
-        web.run_app(app, path=os.path.join(sys.argv[1], 'therapy.sock'))
+        web.run_app(app, path=os.path.join(BASE_DIR, 'therapy.sock'))
 
 
 if __name__ == '__main__':

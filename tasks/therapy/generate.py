@@ -38,7 +38,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://therapy.q.2020.ugractf.ru/{token}/"]
+        "urls": [f"https://therapy.{{hostname}}/{token}/"]
     }, sys.stdout)
 
 
