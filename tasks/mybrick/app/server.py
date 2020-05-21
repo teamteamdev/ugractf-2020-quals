@@ -9,13 +9,17 @@ import hmac
 import motor.motor_asyncio as motor
 import os
 import sys
+import urllib.parse
 
 from jinja2 import FileSystemLoader
 
 BASE_DIR = os.path.dirname(__file__)
 STATE_DIR = sys.argv[1] if len(sys.argv) >= 2 else BASE_DIR
-ADMIN_CREDS = ('root', 'verytopsecretpass123')
-MONGO_PATH = 'mongodb://{}:{}@localhost:30017/db?authSource=admin'
+ADMIN_CREDS = (
+    os.environ['MONGO_USER'],
+    os.environ['MONGO_PASS']
+)
+MONGO_PATH = f'mongodb://{{}}:{{}}@{urllib.parse.quote_plus(os.path.join(STATE_DIR, "mongo.sock"))}/db?authSource=admin'
 
 PREFIX = 'ugra_validate_user_input_'
 SECRET1 = b'coach-pot-groan-funeral-pin'

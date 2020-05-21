@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
-# TODO: mongo
-# mongod --auth --dbpath $1/mongo/ --bind_ip $1/mongo.sock &
-# mongo --host $1/mongo.sock ""
+export MONGO_USER=root
+export MONGO_PASS=mybricksecretpass111
+
+if [[ ! -d $1/mongo ]]; then
+    CREATE=1
+fi
+
+[[ CREATE -eq 1 ]] && mkdir $1/mongo
+mongod --auth --dbpath $1/mongo --bind_ip $1/mongo.sock &
+[[ CREATE -eq 1 ]] && mongo --host $1/mongo.sock admin --eval "db.createUser({user: \"$MONGO_USER\", pwd: \"$MONGO_PASS\", roles: [{role: \"userAdminAnyDatabase\", db: \"admin\"}]})"
+
 ./server.py $1
