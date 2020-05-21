@@ -13,8 +13,6 @@ description: |
     <p>Говорят, у нового главного редактора такая
     интересная подпись, но я её не видел. Может быть
     вам удастся заполучить автограф?</p>
-    <p><code>nc melodrama.q.2020.ugractf.ru 17493</code></p>
-    <p>Ваш личный токен: <code>{{ token }}</code></p>
 generator: ../press1/generate.py
 multi_generator: true
 attachments_path: public/

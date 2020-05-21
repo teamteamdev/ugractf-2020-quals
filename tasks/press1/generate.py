@@ -50,10 +50,12 @@ def generate():
     json.dump({
         TASKS[i]: {
             "flags": [get_flag(i, token)],
-            "substitutions": {
-                "token": token
-            },
-            "urls": []
+            "substitutions": {},
+            "urls": [],
+            "bullets": [
+                "<code>nc melodrama.q.2020.ugractf.ru 17493</code>",
+                f"Токен: <code>{token}</code>"
+            ]
         }
         for i in range(2)
     }, sys.stdout)
