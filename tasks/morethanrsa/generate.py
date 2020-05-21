@@ -126,7 +126,7 @@ def generate():
             f"<nobr>n = {n}</nobr>",
             f"<nobr>e = {e}</nobr>",
             f"<nobr>ciphertext = {c}</nobr>"
-        ]
+        ],
         "urls": []
     }, sys.stdout)
 
