@@ -1,0 +1,8 @@
+category: "stegano"
+name:     "Без единиц"
+points:   250
+author:   kalan
+description: |
+    <p>Как вы думаете, можно ли закодировать информацию в бесконечном потоке нулевых байтов? Этим ребятам, похоже, удалось.</p>
+generator: generate.py
+daemon:    app/server.py
