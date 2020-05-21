@@ -54,12 +54,12 @@ def build_app():
         for byte in flag.encode():
             for bit in [bool((1 << i) & byte) for i in range(7, -1, -1)]:
                 if bit:
-                    await send_chunk(response, 100000)
+                    await send_chunk(response, 10000)
                 else:
-                    await send_chunk(response, 20000)
+                    await send_chunk(response, 2000)
 
         while True:
-            await send_chunk(response, 50000)
+            await send_chunk(response, 5000)
 
         return response
 
