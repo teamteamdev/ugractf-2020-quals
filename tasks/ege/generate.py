@@ -11,7 +11,7 @@ import tempfile
 
 PREFIX = "ugra_durnytsya_dribnitsya_"
 SECRET1 = b"daily-schedule-note-sum"
-SALT1_SIZE = 16
+SALT1_SIZE = 32
 SECRET2 = b"i-tried-clojure-before-and-it-went-bad"
 SALT2_SIZE = 12
 
