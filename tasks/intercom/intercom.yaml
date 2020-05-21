@@ -6,3 +6,4 @@ description: |
     <p>ВАШИ ДРУЗЬЯ-ФИЛОСОФЫ ПРИГЛАСИЛИ ВАС НА ПОСТМОДЕРН ВЕЧЕРИНКУ. ПРИХОДИТЕ.
 generator: generate.py
 daemon:    app/server.py
+daemon_socket: "intercom.sock"

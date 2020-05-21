@@ -1,5 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 _*_
+
 import asyncio
 import os
+import sys
 from random import choice
 import hmac
 
@@ -77,7 +81,7 @@ async def game(reader, writer):
         if data:
             return data.decode().strip().lower()
         else:
-            return False
+            return ""
 
     score = 0
     errors = 0
@@ -111,17 +115,25 @@ async def game(reader, writer):
     writer.close()
 
 
-loop = asyncio.get_event_loop()
-coro = asyncio.start_server(game, '127.0.0.1', 8888, loop=loop)
-server = loop.run_until_complete(coro)
-words = load_dict(os.path.join(BASE_DIR, "dict.txt"))
+def start():
+    loop = asyncio.get_event_loop()
+    if os.environ.get('DEBUG') == 'F':
+        coro = asyncio.start_server(game, '127.0.0.1', 31337, loop=loop)
+    else:
+        coro = asyncio.start_unix_server(game, os.path.join(sys.argv[1]), loop=loop)
+    print(coro)
+    server = loop.run_until_complete(coro)
 
-print('Serving on {}'.format(server.sockets[0].getsockname()))
-try:
-    loop.run_forever()
-except KeyboardInterrupt:
-    pass
+    try:
+        loop.run_forever()
+    except KeyboardInterrupt:
+        pass
 
-server.close()
-loop.run_until_complete(server.wait_closed())
-loop.close()
+    server.close()
+    loop.run_until_complete(server.wait_closed())
+    loop.close()
+
+
+if __name__ == "__main__":
+    words = load_dict(os.path.join(BASE_DIR, "dict.txt"))
+    start()

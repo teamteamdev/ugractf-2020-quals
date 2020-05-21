@@ -25,7 +25,7 @@ def get_user_tokens():
 
 
 def generate():
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print("Usage: generate.py user_id target_dir", file=sys.stderr)
         sys.exit(1)
 
@@ -34,7 +34,11 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://intercom.ugractf.ru/{token}/"]
+        "urls": [],
+        "bullets": [
+            "<code>nc ege.q.2020.ugractf.ru 17494</code>",
+            f"Токен: <code>{token}</code>"
+        ]
     }, sys.stdout)
 
 
