@@ -1,0 +1,7 @@
+category: "stegano"
+name:     "Святая простота"
+points:   150
+author:   kalan
+description: |
+    <p>Простые задачи требуют простых решений. Надо лишь добавить немного красок в нашу серую действительность.</p>
+generator: generate.py
