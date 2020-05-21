@@ -120,8 +120,13 @@ def generate():
             "e": e,
             "d": d,
             "m": m,
-            "ciphertext": c
+            "c": c
         },
+        "bullets": [
+            f"<nobr>n = {n}</nobr>",
+            f"<nobr>e = {e}</nobr>",
+            f"<nobr>ciphertext = {c}</nobr>"
+        ]
         "urls": []
     }, sys.stdout)
 

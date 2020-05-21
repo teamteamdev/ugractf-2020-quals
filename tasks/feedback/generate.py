@@ -33,9 +33,8 @@ def generate():
 
     json.dump({
         "flags": [flag],
-        "substitutions": {
-            "review": emoji
-        },
+        "substitutions": {},
+        "bullets": [emoji],
         "urls": []
     }, sys.stdout, ensure_ascii=False)
 

@@ -5,5 +5,4 @@ author:   nsychev
 description: |
     <p>Участники CTF-соревнований нередко оставляют отзывы.
     В этот раз пришло что-то совсем непонятное:</p>
-    <pre><code style="word-wrap: break-word;">{{ review }}</code></pre>
 generator: generate.py
