@@ -212,6 +212,11 @@ def build_app(client):
             if username.startswith('@'):
                 username = username[1:]
             
+            if not username.endswith('bot'):
+                raise web.HTTPSeeOther(f'/{token}/?error=Я+интроверт+и+с+людьми+не+общаюсь')
+            
+            await asyncio.sleep(5)
+            
             try:
                 info = await client(fu.GetFullUserRequest(username))
             except:
