@@ -3,6 +3,7 @@
 import hmac
 import json
 import os
+import random
 import sys
 import subprocess
 import tempfile
@@ -22,6 +23,8 @@ def generate():
         sys.exit(1)
     user_id = sys.argv[1]
     target_dir = sys.argv[2]
+
+    random.seed(hmac.new(SECRET, str(user_id).encode(), "sha256").digest())
 
     flag = get_flag()
 
@@ -44,7 +47,7 @@ def generate():
                                "-map", "1", "-map", "2", "-map", "3",
                                "-map", "4", "-map", "5", "-map", "6",
                                "-map", "7", "-map", "8", "-map", "9",
-                               "-c:v", "copy", "-c:a", "copy", "-c:s", "webvtt",
+                               "-c:v", "copy", "-b:a", f"{random.randint(64, 128)}k", "-c:s", "webvtt",
                                "-metadata:s:s:0", "language=eng",
                                "-metadata:s:s:1", "language=fre",
                                "-metadata:s:s:2", "language=ger",

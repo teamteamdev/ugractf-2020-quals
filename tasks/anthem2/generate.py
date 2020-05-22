@@ -5,6 +5,7 @@ import hmac
 import json
 import os
 import pymp4.parser
+import random
 import shutil
 import sys
 import subprocess
@@ -35,6 +36,7 @@ def generate():
     target_dir = sys.argv[2]
 
     flag = get_flag()
+    random.seed(hmac.new(SECRET, str(user_id).encode(), "sha256").digest())
 
     with tempfile.TemporaryDirectory() as temp_dir:
         open(os.path.join(temp_dir, "flag-frame.svg"), "w").write(
@@ -49,7 +51,7 @@ def generate():
         subprocess.check_call(["ffmpeg",
                                "-loop", "1", "-i", os.path.join(temp_dir, "flag-frame.png"),
                                "-c:v", "libx264", "-r", "25",
-                               "-video_track_timescale", "12800", "-b:v", "256k", "-t", "0.04",
+                               "-video_track_timescale", "12800", "-b:v", f"{random.randint(32, 128)}k", "-t", "0.04",
                                os.path.join(temp_dir, "flag-frame.mp4")])
 
         shutil.copy(os.path.join("private", "black.mp4"), os.path.join(temp_dir, "black.mp4"))
@@ -57,7 +59,7 @@ def generate():
         subprocess.check_call(["ffmpeg",
                                "-skip_estimate_duration_from_pts", "1",
                                "-f", "concat", "-i", "concat1.txt",
-                               "-vsync", "0", "-fflags", "+igndts+genpts", "-b:v", "256k",
+                               "-vsync", "0", "-fflags", "+igndts+genpts", "-b:v", f"{random.randint(32, 128)}k",
                                os.path.join(temp_dir, "flag-tail-muted.mp4")],
                               cwd=temp_dir)
 
@@ -73,7 +75,7 @@ def generate():
         subprocess.check_call(["ffmpeg",
                                "-skip_estimate_duration_from_pts", "1",
                                "-f", "concat", "-i", "concat2.txt",
-                               "-vsync", "0", "-fflags", "+igndts+genpts", "-b:v", "256k", "-c:a", "copy",
+                               "-vsync", "0", "-fflags", "+igndts+genpts", "-b:v", f"{random.randint(32, 128)}k", "-c:a", "copy",
                                os.path.join(temp_dir, "anthem-clean.mp4")],
                               cwd=temp_dir)
 
