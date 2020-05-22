@@ -7,4 +7,6 @@ description: |
     <p>Ребята! Это задание посвящается вам. Мы попробовали подготовить тренировочный вариант, чтобы вы могли готовиться к ЕГЭ даже во время решения CTF-задач. Надеемся, что вам будет полезно.
 generator: generate.py
 daemon:    app/server.py
-daemon_isolate_net: false
+daemon_socket: ege.sock
+daemon_socket_type: tcp
+daemon_socket_out_port: 17494

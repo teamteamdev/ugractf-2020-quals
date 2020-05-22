@@ -120,7 +120,7 @@ def start():
     if os.environ.get('DEBUG') == 'F':
         coro = asyncio.start_server(game, '127.0.0.1', 31337, loop=loop)
     else:
-        coro = asyncio.start_unix_server(game, os.path.join(sys.argv[1]), loop=loop)
+        coro = asyncio.start_unix_server(game, os.path.join(sys.argv[1], "ege.sock"), loop=loop)
     print(coro)
     server = loop.run_until_complete(coro)
 
