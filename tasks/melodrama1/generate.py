@@ -51,7 +51,7 @@ def generate():
             "substitutions": {},
             "urls": [],
             "bullets": [
-                "<code>nc melodrama.q.2020.ugractf.ru 17493</code>",
+                "<code>nc melodrama.{{ hostname }} 17493</code>",
                 f"Токен: <code>{token}</code>"
             ]
         }
