@@ -16,6 +16,7 @@ if [[ CREATE -eq 1 ]]; then
             DONE=1
             break
         fi
+        sleep 1
     done
     if [[ CREATE -ne 1 ]]; then
         exit 1
