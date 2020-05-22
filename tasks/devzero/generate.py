@@ -34,7 +34,7 @@ def generate():
     json.dump({
         "flags": [flag],
         "substitutions": {},
-        "urls": [f"https://devzero.HOSTNAME/{token}/dev/zero"]
+        "urls": [f"https://devzero.{{hostname}}/{token}/dev/zero"]
     }, sys.stdout)
 
 
