@@ -46,7 +46,7 @@ def generate():
     
     
     json.dump({
-        f"melodrama{i}": {
+        f"melodrama{i + 1}": {
             "flags": [get_flag(i, token)],
             "substitutions": {},
             "urls": [],
@@ -55,7 +55,7 @@ def generate():
                 f"Токен: <code>{token}</code>"
             ]
         }
-        for i in range(1, 3)
+        for i in range(2)
     }, sys.stdout)
 
 
