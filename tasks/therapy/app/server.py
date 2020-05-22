@@ -10,6 +10,7 @@ import hmac
 import json
 import os
 import random
+import socks
 import sys
 import telethon
 import telethon.tl.functions.users as fu
@@ -130,7 +131,8 @@ def build_client():
     client = telethon.TelegramClient(
         os.path.join(STATE_DIR, "client"), 
         config['api_id'], 
-        config['api_hash']
+        config['api_hash'],
+        proxy=(socks.SOCKS5, 'sox.ctf.su', 1080)
     )
     maker = writingprompt.WritingPromptMaker()
 
