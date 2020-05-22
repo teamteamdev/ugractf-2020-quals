@@ -9,7 +9,7 @@ if [[ ! -d $1/mongo ]]; then
     mongod --dbpath $1/mongo --bind_ip $1/mongo.sock --logpath $1/mongo-logs &
     for i in seq 1 5; do
         sleep 1
-        if mongo --host $1/mongo.sock db --authenticationDatabase admin --eval "db.createUser({user: \"$MONGO_USER\", pwd: \"$MONGO_PASS\", roles: [{role: \"userAdminAnyDatabase\", db: \"admin\"}]})"; then
+        if mongo --host $1/mongo.sock admin --eval "db.createUser({user: \"$MONGO_USER\", pwd: \"$MONGO_PASS\", roles: [{role: \"userAdminAnyDatabase\", db: \"admin\"}]})"; then
             DONE=1
             break
         fi
@@ -20,7 +20,7 @@ if [[ ! -d $1/mongo ]]; then
         exit 1
     fi
 
-    mongo --host $1/mongo.sock db --eval "db.adminCommand( { shutdown: 1 } )"
+    mongo --host $1/mongo.sock admin --eval "db.adminCommand( { shutdown: 1 } )"
     wait
 fi
 
