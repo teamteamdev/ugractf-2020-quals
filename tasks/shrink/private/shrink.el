@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 
 (defvar **mad**)        (defvar *debug*)      (defvar *print-space*)
 (defvar *print-upcase*) (defvar abuselst)     (defvar abusewords)
