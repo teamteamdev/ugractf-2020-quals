@@ -19,7 +19,7 @@ ADMIN_CREDS = (
     os.environ['MONGO_USER'],
     os.environ['MONGO_PASS']
 )
-MONGO_PATH = f'mongodb://{{}}:{{}}@{urllib.parse.quote_plus(os.path.join(STATE_DIR, "mongo.sock"))}/db?authSource=admin'
+MONGO_PATH = f'mongodb://{{}}:{{}}@{urllib.parse.quote_plus(os.path.join(STATE_DIR, "mongo.sock"))}/db'
 
 PREFIX = 'ugra_validate_user_input_'
 SECRET1 = b'coach-pot-groan-funeral-pin'
