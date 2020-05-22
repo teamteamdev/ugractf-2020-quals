@@ -5,6 +5,7 @@ export MONGO_USER=root
 export MONGO_PASS=mybricksecretpass111
 
 if [[ ! -d $1/mongo ]]; then
+    mkdir $1/mongo
     mongod --dbpath $1/mongo --bind_ip $1/mongo.sock --logpath $1/mongo-logs &
     for i in seq 1 5; do
         sleep 1
