@@ -55,7 +55,7 @@ def generate():
                 f"Токен: <code>{token}</code>"
             ]
         }
-        for i in range(2)
+        for i in range(1, 3)
     }, sys.stdout)
 
 
