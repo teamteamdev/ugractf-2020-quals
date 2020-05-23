@@ -42,18 +42,10 @@ def generate():
         open(os.path.join(temp_dir, "history.cpp"), "w").write(
             open(os.path.join("private", "history.cpp")).read().replace("+++flag+++", flag_packed)
         )
-        compile_cmds = [["g++", "-Wall", "-Werror", "-static",
-                         os.path.join(temp_dir, "history.cpp"), "-O2",
-                         f"-frandom-seed={random.randint(0, 1048575)}",
-                         "-o", os.path.join(target_dir, "history"),
-                         "-lformw", "-lncursesw", "-ltinfo"],
-                        ["strip", os.path.join(target_dir, "history")]]
-        for cmd_ in compile_cmds:
-            if os.path.isdir("/etc/nixos"):
-                cmd = ["nix-shell", "--run", " ".join(cmd_)]
-            else:
-                cmd = cmd_
-            subprocess.check_call(cmd, stdout=sys.stderr)
+        image_name = subprocess.run(["docker", "build", "-q", "-f", "Dockerfile", temp_dir], capture_output=True, check=True).stdout.decode("utf-8").strip()
+        container_name = subprocess.run(["docker", "create", image_name], capture_output=True, check=True).stdout.decode("utf-8").strip()
+        subprocess.check_call(["docker", "cp", f"{container_name}:/root/history", os.path.join(target_dir, "history")], stdout=subprocess.DEVNULL)
+        subprocess.check_call(["docker", "rm", container_name], stdout=subprocess.DEVNULL)
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
 
