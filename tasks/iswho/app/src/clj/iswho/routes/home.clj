@@ -17,5 +17,5 @@
 
 (defn home-routes []
   [""
-   ["/:token" {:get index-page
+   ["/:token/" {:get index-page
                :post request-page}]])
