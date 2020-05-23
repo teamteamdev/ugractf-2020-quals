@@ -9,7 +9,7 @@ import random
 import sys
 import tempfile
 
-PREFIX = "ugra_escape_not_only_sql_"
+PREFIX = "ugra_validate_user_input_"
 SECRET1 = b"coach-pot-groan-funeral-pin"
 SALT1_SIZE = 16
 SECRET2 = b"action-career-argument-extension-distributor"
