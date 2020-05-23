@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 set -e
 
-cleanup() {
-    docker-compose down
-}
-
-trap cleanup EXIT
-docker-compose up -d
+NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+exec docker-compose up -p "$NEW_UUID"
