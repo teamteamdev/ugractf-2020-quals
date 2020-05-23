@@ -48,7 +48,7 @@ def generate():
                        "-o", os.path.join(target_dir, "history"),
                        "-lformw", "-lncursesw", "-ltinfo"]
         if os.path.isdir("/etc/nixos"):
-            prefix = ["nix-shell", "-p", "ncurses", "--run", " ".join(compile_cmd)]
+            cmd = ["nix-shell", "--run", " ".join(compile_cmd)]
         else:
             cmd = compile_cmd
 
