@@ -17,8 +17,8 @@ GRAM = {
     }
 
 BASE_DIR = os.path.dirname(__file__)
-MAX_SCORE = 7331
-MAX_ERRORS = 73
+MAX_SCORE = 2020
+MAX_ERRORS = 40
 
 PREFIX = "ugra_durnytsya_dribnitsya_"
 SECRET1 = b"daily-schedule-note-sum"
