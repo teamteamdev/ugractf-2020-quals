@@ -9,3 +9,7 @@ bullets:
     <a href="/files/hitech1/data.img.gz">data.img.gz</a>
 flags:
   - "ugra_we_all_make_good_websites_a876ec4b2df5"
+hints:
+  - name: dontdisturb
+    points: 0
+    text: Для успешного решения таска не нужно взаимодействовать ни с одним живым человеком.
