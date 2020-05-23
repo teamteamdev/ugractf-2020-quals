@@ -4,4 +4,4 @@ services:
     build:
       context: .
     volumes:
-      - ./sock:/iswho/sock
+      - "${SOCK_PATH}:/iswho/sock"

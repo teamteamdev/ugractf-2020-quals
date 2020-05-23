@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-rm -f $1/sock/iswho.sock
+export SOCK_PATH=$1/sock
+rm -f $SOCK_PATH/iswho.sock
 exec docker-compose up
