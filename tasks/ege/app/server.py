@@ -17,7 +17,7 @@ GRAM = {
 
 BASE_DIR = os.path.dirname(__file__)
 MAX_SCORE = 7331
-MAX_ERRORS = 3
+MAX_ERRORS = 73
 
 PREFIX = "ugra_durnytsya_dribnitsya_"
 SECRET1 = b"daily-schedule-note-sum"
@@ -100,7 +100,6 @@ async def game(reader, writer):
         if user_a == a:
             await send("Так.\n")
             score += 1
-            errors = 0
         else:
             await send("Ні!\n")
             errors += 1
