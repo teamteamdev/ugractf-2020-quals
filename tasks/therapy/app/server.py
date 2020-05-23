@@ -132,7 +132,14 @@ def build_client():
         os.path.join(STATE_DIR, "client"), 
         config['api_id'], 
         config['api_hash'],
-        proxy=(socks.SOCKS5, 'sox.ctf.su', 1080)
+        proxy=(
+            socks.SOCKS5, 
+            config['proxy_host'],
+            config['proxy_port'],
+            True,
+            config['proxy_user'],
+            config['proxy_pass']
+        )
     )
     maker = writingprompt.WritingPromptMaker()
 
