@@ -6,4 +6,5 @@ description: |
     <p>«В хозяйстве пригодится!» — подумал я и добавил этот сайт в закладки.
 generator: generate.py
 daemon:    app/start_server.sh
-daemon_isolate_net: false
+daemon_isolate: false
+daemon_socket: sock/iswho.sock

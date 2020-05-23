@@ -1,5 +1,7 @@
 version: "3.1"
 services:
   iswho:
-    ports:
-      - "31337:3000"
+    build:
+      context: .
+    volumes:
+      - ./sock:/iswho/sock
