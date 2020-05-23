@@ -42,6 +42,7 @@ def generate():
         open(os.path.join(temp_dir, "history.cpp"), "w").write(
             open(os.path.join("private", "history.cpp")).read().replace("+++flag+++", flag_packed)
         )
+        subprocess.check_call(["docker", "build", "-f", "Dockerfile", temp_dir])
         image_name = subprocess.run(["docker", "build", "-q", "-f", "Dockerfile", temp_dir], capture_output=True, check=True).stdout.decode("utf-8").strip()
         container_name = subprocess.run(["docker", "create", image_name], capture_output=True, check=True).stdout.decode("utf-8").strip()
         subprocess.check_call(["docker", "cp", f"{container_name}:/root/history", os.path.join(target_dir, "history")], stdout=subprocess.DEVNULL)
