@@ -16,8 +16,8 @@ def get(a, b):
 
 
 def main():
-    p = 111
-    q = 222
+    p = AAAAAAA
+    q = BBBBBBB
 
     print("Calculating result, wait....", end="\r", flush=True)
 

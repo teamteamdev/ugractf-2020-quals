@@ -37,7 +37,7 @@ def generate():
         with open("private/source.py") as f:
             source = f.read()
 
-        source = source.replace("111", str(37 * gcd)).replace("222", str(512345 * gcd))
+        source = source.replace("AAAAAAA", str(37 * gcd)).replace("BBBBBBB", str(512345 * gcd))
         
         with open(os.path.join(temp_dir, "file.py"), "w") as f:
             f.write(source)
