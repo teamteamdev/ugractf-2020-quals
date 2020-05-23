@@ -42,18 +42,18 @@ def generate():
         open(os.path.join(temp_dir, "history.cpp"), "w").write(
             open(os.path.join("private", "history.cpp")).read().replace("+++flag+++", flag_packed)
         )
-        compile_cmd = ["g++", "-Wall", "-Werror", "-static",
-                       os.path.join(temp_dir, "history.cpp"), "-O2",
-                       f"-frandom-seed={random.randint(0, 1048575)}",
-                       "-o", os.path.join(target_dir, "history"),
-                       "-lformw", "-lncursesw", "-ltinfo"]
-        if os.path.isdir("/etc/nixos"):
-            cmd = ["nix-shell", "--run", " ".join(compile_cmd)]
-        else:
-            cmd = compile_cmd
-
-        subprocess.check_call(cmd, stdout=sys.stderr)
-        subprocess.check_call(["strip", os.path.join(target_dir, "history")], stdout=sys.stderr)
+        compile_cmds = [["g++", "-Wall", "-Werror", "-static",
+                         os.path.join(temp_dir, "history.cpp"), "-O2",
+                         f"-frandom-seed={random.randint(0, 1048575)}",
+                         "-o", os.path.join(target_dir, "history"),
+                         "-lformw", "-lncursesw", "-ltinfo"],
+                        ["strip", os.path.join(target_dir, "history")]]
+        for cmd in compile_cmds:
+            if os.path.isdir("/etc/nixos"):
+                cmd = ["nix-shell", "--run", " ".join(compile_cmd)]
+            else:
+                cmd = compile_cmd
+            subprocess.check_call(cmd, stdout=sys.stderr)
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
 
