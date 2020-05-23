@@ -7,7 +7,7 @@ RUN echo "alias pwd='echo /var/lib/iswho/private'" > /etc/profile; \
     chmod +x /etc/profile
 
 RUN mkdir -p /iswho/sock
-COPY supervisord.conf target/uberjar/iswho.jar /iswho/
+COPY run_internal.sh supervisord.conf target/uberjar/iswho.jar /iswho/
 WORKDIR "/iswho"
 VOLUME ["/iswho/sock"]
-CMD ["supervisord", "-c", "/iswho/supervisord.conf"]
+CMD ["/iswho/run_internal.sh"]
