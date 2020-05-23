@@ -94,6 +94,8 @@ reads the sentence before point, and prints the Shrink's answer."
   (setq owner nil)
   (make-local-variable 'history)
   (setq history nil)
+  (make-local-variable 'minin-flag)
+  (setq history nil)
   (make-local-variable '*debug*)
   (setq *debug* nil)
   (make-local-variable 'inter)
