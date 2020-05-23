@@ -2,4 +2,4 @@
 set -e
 
 export SOCK_PATH=$1/sock
-exec docker-compose up
+exec docker-compose up --build
