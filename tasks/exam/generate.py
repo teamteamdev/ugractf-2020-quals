@@ -3,6 +3,7 @@
 import hmac
 import json
 import os
+import os.path
 import random
 import sys
 import subprocess
@@ -41,11 +42,17 @@ def generate():
         open(os.path.join(temp_dir, "history.cpp"), "w").write(
             open(os.path.join("private", "history.cpp")).read().replace("+++flag+++", flag_packed)
         )
-        subprocess.check_call(["g++", "-Wall", "-Werror", "-static",
-                               os.path.join(temp_dir, "history.cpp"), "-O2",
-                               f"-frandom-seed={random.randint(0, 1048575)}",
-                               "-o", os.path.join(target_dir, "history"),
-                               "-lformw", "-lncursesw", "-ltinfo"], stdout=sys.stderr)
+        compile_cmd = ["g++", "-Wall", "-Werror", "-static",
+                       os.path.join(temp_dir, "history.cpp"), "-O2",
+                       f"-frandom-seed={random.randint(0, 1048575)}",
+                       "-o", os.path.join(target_dir, "history"),
+                       "-lformw", "-lncursesw", "-ltinfo"]
+        if os.path.isdir("/etc/nixos"):
+            prefix = ["nix-shell", "-p", "ncurses", "--run", " ".join(compile_cmd)]
+        else:
+            cmd = compile_cmd
+
+        subprocess.check_call(cmd, stdout=sys.stderr)
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
 
