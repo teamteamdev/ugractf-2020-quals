@@ -53,6 +53,7 @@ def generate():
             cmd = compile_cmd
 
         subprocess.check_call(cmd, stdout=sys.stderr)
+        subprocess.check_call(["strip", os.path.join(target_dir, "history")], stdout=sys.stderr)
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
 
