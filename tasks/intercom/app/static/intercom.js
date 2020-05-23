@@ -33,6 +33,7 @@ const msgHouse = e => {
 
 const err = (code, e = {}) => {
     if (!e.wasClean) {
+        errSnd.currentTime = 0;
         errSnd.play();
         display('Err0' + code);
         if (code == '4')

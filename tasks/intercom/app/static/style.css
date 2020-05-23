@@ -102,6 +102,7 @@ button {
 button:active {
     opacity: 0.1;
     margin: 1px;
+    outline: none;
 }
 
 .title {
