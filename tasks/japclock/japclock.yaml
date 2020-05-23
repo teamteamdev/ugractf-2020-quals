@@ -8,3 +8,7 @@ description: |
 generator: generate.py
 daemon:    app/server.py
 daemon_socket: "japclock.sock"
+hints:
+  - name: translations
+    points: 0
+    text: Перевод с японского на русский от Яндекса содержит неточности, которые мешают решить задание. Используйте другие языки или другой переводчик.
