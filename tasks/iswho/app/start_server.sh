@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-export SOCK_PATH=$1/sock
-exec docker-compose up --build
+cleanup() {
+    docker-compose down
+}
+
+trap cleanup EXIT
+docker-compose up -d

@@ -5,6 +5,7 @@ import asyncio
 import aiohttp.web as web
 import hmac
 import os
+import socket
 import random
 import re
 import sys
@@ -73,7 +74,15 @@ def start():
     if os.environ.get('DEBUG') == 'F':
         web.run_app(app, host='0.0.0.0', port=31337)
     else:
-        web.run_app(app, path=os.path.join(sys.argv[1], 'devzero.sock'))
+        sock_path = os.path.join(sys.argv[1], "devzero.sock")
+        s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        try:
+            os.unlink(sock_path)
+        except FileNotFoundError:
+            pass
+        s.bind(sock_path)
+        os.chmod(sock_path, 0o666)
+        web.run_app(app, sock=s)
 
 
 if __name__ == '__main__':
