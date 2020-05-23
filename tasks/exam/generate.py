@@ -48,11 +48,11 @@ def generate():
                          "-o", os.path.join(target_dir, "history"),
                          "-lformw", "-lncursesw", "-ltinfo"],
                         ["strip", os.path.join(target_dir, "history")]]
-        for cmd in compile_cmds:
+        for cmd_ in compile_cmds:
             if os.path.isdir("/etc/nixos"):
-                cmd = ["nix-shell", "--run", " ".join(compile_cmd)]
+                cmd = ["nix-shell", "--run", " ".join(cmd_)]
             else:
-                cmd = compile_cmd
+                cmd = cmd_
             subprocess.check_call(cmd, stdout=sys.stderr)
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
