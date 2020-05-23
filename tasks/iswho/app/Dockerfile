@@ -6,6 +6,8 @@ RUN adduser -S -s /bin/bash iswho
 RUN echo "alias pwd='echo /var/lib/iswho/private'" > /etc/profile; \
     chmod +x /etc/profile
 
+RUN apk add whois
+
 RUN mkdir -p /iswho/sock
 COPY run_internal.sh supervisord.conf target/uberjar/iswho.jar /iswho/
 WORKDIR "/iswho"
