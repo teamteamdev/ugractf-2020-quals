@@ -16,7 +16,4 @@ description: |
 generator: generate.py
 multi_generator: true
 daemon: app/start_server.sh
-daemon_socket: melodrama1.sock
-daemon_socket_type: tcp
-daemon_socket_out_port: 17493
 attachments_path: public/
