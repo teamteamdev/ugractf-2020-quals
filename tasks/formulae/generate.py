@@ -52,8 +52,8 @@ def generate():
             b_ = f"- {-b}" if b < 0 else f"+ {b}"
             c_ = f"- {-c}" if c < 0 else f"+ {c}"
             guard = f"EE{permutation[n] + 1}=1" if permutation[n] is not None else "2 + 2 = 4"
-            worksheet.write_formula(n, 134, f"=IF(({guard}) AND ({a_}(CODE(A{n0+1})^2) {b_}*CODE(A{n0+1}) {c_} = 0) AND "
-                                            f"({a_}(CODE(A{n+1})^2) {b_}*CODE(A{n+1}) {c_} = 0), 1, 0)",
+            worksheet.write_formula(n, 134, f"=IF(AND(AND({guard}, {a_}(CODE(A{n0+1})^2) {b_}*CODE(A{n0+1}) {c_} = 0), "
+                                            f"{a_}(CODE(A{n+1})^2) {b_}*CODE(A{n+1}) {c_} = 0), 1, 0)",
                                     None, 0 if real else 1)
 
         for n, c in enumerate(data):
