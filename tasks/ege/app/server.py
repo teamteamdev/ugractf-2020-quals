@@ -12,7 +12,8 @@ GRAM = {
     'f': 'обидві',
     'n': 'обоє',
     'anim': 'хто',
-    'inanim': 'що'
+    'inanim': 'що',
+    'unanim': 'що'
     }
 
 BASE_DIR = os.path.dirname(__file__)
@@ -50,6 +51,15 @@ def parse_word(w):
     }
 
 
+def test_word(word):
+    rules = [word.get('gender') != 'p',
+             word.get('type'),
+             word.get('plural'),
+             word.get('singular') != word.get('plural')
+             ]
+    return all(rules)
+
+
 def load_dict(file):
     print("Loading dictionary...")
     return list(map(parse_word, read_dict(file)))
@@ -57,6 +67,9 @@ def load_dict(file):
 
 def challenge(dictionary):
     word = choice(dictionary)
+    while not test_word(word):
+        word = choice(dictionary)
+
     question = f"\n{word['plural'].title()} — вони {GRAM[word['type']]}?\n" \
         "Ваш варіант (обидва, обидві, обоє): "
     answer = GRAM[word['gender']]
@@ -120,7 +133,7 @@ def start():
         coro = asyncio.start_server(game, '127.0.0.1', 31337, loop=loop)
     else:
         coro = asyncio.start_unix_server(game, os.path.join(sys.argv[1], "ege.sock"), loop=loop)
-    print(coro)
+    print('Starting server...')
     server = loop.run_until_complete(coro)
 
     try:
