@@ -6,6 +6,6 @@ description: |
     <p>В наше время довольно часто происходят различные утечки — в интернет попадают данные десятков и сотен тысяч людей. Вам столько не нужно — найдите лишь пару сотен участников этого мероприятия.</p>
 bullets:
   - >
-    <a href=/files/hitech1/data.img.gz">data.img.gz</a>
+    <a href="/files/hitech1/data.img.gz">data.img.gz</a>
 flags:
   - "ugra_querystring_is_the_new_cookie_e73a2fcb986d"
