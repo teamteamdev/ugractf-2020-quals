@@ -1,0 +1,10 @@
+category: "forensics"
+name:     "Запросы"
+points:   300
+author:   nsychev
+description: |
+    <p>Этот пользователь отправляет весьма странные запросы. Нет ли в них чего-нибудь подозрительного?</p>
+attachments_path: public/
+flags:
+  - "ugra_http2_is_nice_but_better_with_iodine_15af90c465128359"
+submit_not_after: "2020-05-24T14:40:00"
