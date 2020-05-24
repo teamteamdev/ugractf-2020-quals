@@ -1,0 +1,7 @@
+category: "joy"
+name:     "Турбо-птица"
+points:   150
+author:   abbradar
+description: |
+    <p>Фанаты одной известной современной игры создали множество её клонов и модификаций. Сможете победить в нашей?</p>
+generator: generate.py
