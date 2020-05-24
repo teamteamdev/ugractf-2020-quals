@@ -41,7 +41,7 @@ def generate():
                         for _ in range(random.randint(12, 22))])
 
     with tempfile.TemporaryDirectory() as temp_dir:
-        rar_cmd = f"rar a -rr{random.randint(4, 100)} -m{random.randint(0, 5)} -hp{password} unrar.rar unrar"
+        rar_cmd = f"rar a -rr{random.randint(4, 100)} -m{random.randint(0, 5)} unrar.rar unrar"
         open(os.path.join(temp_dir, "rar.sh"), "w").write(rar_cmd)
         shutil.copy(os.path.join("private", "unrar"), os.path.join(temp_dir, "unrar"))
 
