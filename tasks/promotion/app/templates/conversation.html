@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Flag Extractors</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>Conversation with {{ user_id }}</h1>
+            {% if closed %}
+            <div class="alert alert-danger">This conversation was closed.</div>
+            {% else %}
+            <p>
+                <a href="/{{ user_id }}/close" class="btn btn-danger">Close without reply</a>
+            </p>
+            {% endif %}
+
+            <h2>Send message to user</h2>
+            <form action="/{{ user_id }}/write" method="POST">
+                {% if request.args.reason_message %}
+                <div class="alert alert-danger">
+                    {{ request.args.reason_message }}
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label for="textarea">Message text</label>
+                    <textarea class="form-control" id="textarea" rows="3" name="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+
+
+            <h2>Send flag to user</h2>
+            <form action="/{{ user_id }}/token" method="POST">
+                {% if request.args.reason_token %}
+                <div class="alert alert-danger">
+                    {{ request.args.reason_token }}
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label for="token">Token</label>
+                    <input type="token" class="form-control" id="token" name="token" required value="{{ request.args.token }}">
+                  </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+
+            <h2>History</h2>
+
+            {% for message in messages %}
+            <div class="card">
+                <div class="card-body">
+                    {% if message.out %}
+                    <h5 class="card-title">→ to user</h5>
+                    
+                    {% if message.token %}
+                    <h6 class="card-subtitle mb-2 text-muted">{{ message.token }}</h6>
+                    {% endif %}
+
+                    {% else %}
+                    <h5 class="card-title">User</h5>
+                    {% endif %}
+                    <p class="card-text">
+                        {{ message.text|safe }}
+                    </p>
+
+                    <p class="text-muted">{{ message.created }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </main>
+    </body>
+
+</html>
