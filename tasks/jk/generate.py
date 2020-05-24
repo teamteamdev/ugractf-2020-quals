@@ -19,13 +19,6 @@ def get_flag():
     return PREFIX + hmac.new(SECRET, str(user_id).encode(), "sha256").hexdigest()[:SALT_SIZE]
 
 
-MORSE = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..", "e": ".", "f": "..-.", "g": "--.", "h": "....", "i": "..",
-         "j": ".---", "k": "-.-", "l": ".-..", "m": "--", "n": "-.", "o": "---", "p": ".--.", "q": "--.-", "r": ".-.",
-         "s": "...", "t": "-", "u": "..-", "v": "...-", "w": ".--", "x": "-..-", "y": "-.--", "z": "--..", "0": "-----",
-         "1": ".----", "2": "..---", "3": "...--", "4": "....-", "5": ".....", "6": "-....", "7": "--...", "8": "---..",
-         "9": "----.", "_": "..--.-"}
-
-
 def generate():
     if len(sys.argv) < 3:
         print("Usage: generate.py user_id target_dir", file=sys.stderr)
@@ -51,11 +44,9 @@ def generate():
         subprocess.check_call(["docker", "rm", container_name], stdout=subprocess.DEVNULL)
 
         content = list(open(os.path.join(temp_dir, "unrar.rar"), "rb").read())
-        offset = random.randint(1000, 8000)
-        bits = "000".join(["0".join(("111" if p == "-" else "1") for p in MORSE[c]) for c in flag])
-        bits += "0" * ((8 - len(bits) % 8) % 8)
-        for n, i in enumerate(range(0, len(bits), 8)):
-            content[offset + n] ^= int(bits[i : i+8], 2)
+        offset = random.randint(2000, 8000)
+        for n, i in enumerate(flag):
+            content[offset + n] ^= ord(i)
         open(os.path.join(target_dir, "unrar.rar"), "wb").write(bytes(content))
 
     json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
