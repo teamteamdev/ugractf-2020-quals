@@ -10,4 +10,4 @@ description: |
 generator: generate.py
 daemon: app/start_server.sh
 daemon_socket: mybrick.sock
-submit_not_after: "2020-05-24T17:00:00Z"
+submit_not_after: "2020-05-24T19:00:00Z"

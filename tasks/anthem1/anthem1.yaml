@@ -5,4 +5,4 @@ author:   kalan
 description: |
     <p>Вашему вниманию предлагается <em>гимн 2020 года</em>.</p>
 generator: generate.py
-submit_not_after: "2020-05-24T17:00:00Z"
+submit_not_after: "2020-05-24T19:00:00Z"

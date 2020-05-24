@@ -17,4 +17,4 @@ generator: generate.py
 multi_generator: true
 daemon: app/start_server.sh
 attachments_path: public/
-submit_not_after: "2020-05-24T17:00:00Z"
+submit_not_after: "2020-05-24T19:00:00Z"
