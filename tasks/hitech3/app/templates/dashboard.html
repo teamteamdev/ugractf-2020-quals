@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>Dash Board</TITLE>
+<STYLE>
+body {
+text-align: center;
+}
+img:not(:first-child) {
+display: inline-block;
+text-align: center;
+}
+
+img:after {
+content: ' ';
+display: block;
+}
+
+h1 {
+font-family: 'Comic Sans MS';
+font-size: 120px;
+text-align: center;
+margin: 0;
+}
+
+
+h2, li {
+font-family: 'Comic Sans MS';
+font-size: 40px;
+text-align: center;
+margin: 0;
+}
+li {font-family: arial;}
+
+td {
+text-align: center;
+}
+
+table {
+background: linear-gradient(to right, rgba(42, 123, 255, 0.5), rgba(177, 52, 44, 0.7));
+
+}
+
+tr {
+border-bottom: 1px solid gray;
+}
+
+button {
+position: absolute;
+bottom: 5px;
+}
+
+body {
+background:  rgba(255, 176, 33, 0.5);
+}
+
+html {
+background-size: 100%;
+}
+li:before { content: '🟃 '; }
+</STYLE>
+</HEAD>
+<BODY>
+<IMG SRC="/static/kids.jpg" style="margin-bottom: 12em;" />
+<IMG SRC="/static/dash-top.png" HEIGHT="50%" />
+<table WIDTH="100%" height="60%">
+<tr>
+<td VALIGN="TOP" WIDTH="50%">
+<IMG SRC="/static/dash-ani.gif" HEIGHT="30%" STYLE="margin-top: -5%; "/>
+<h1><font color="red">1</font> <font color="green">5</font> <font color="blue">3</font></h1>
+</td>
+<td VALIGN="TOP" WIDTH="50%">
+<IMG SRC="/static/dash-ani2.gif" HEIGHT="30%" STYLE="margin-top: -5%;"/>
+<ul style="list-style: none;"><li>15:30 ТИХИЙ<br>
+ЧАС</li>
+<li>17:30 КОНКУРС ЮНЫЙ<br>СТАРТАПЁР</li>
+<li>19:00 ХАКАТОН</li>
+<li>20:30 ВИКТОРИНА ПО ИННО<br>ВАЦИЯМ</li>
+
+</td>
+</tr>
+</table>
+<form action="/list" method="get">{% for item, value in args.items() %}<input type="hidden" name="{{item}}" value="{{value}}" />{% endfor %}
+    <button>Списки участников</button></form>
+</BODY>
+</HTML>

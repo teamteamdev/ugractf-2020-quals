@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>Dash Board</TITLE>
+<STYLE>
+body {
+text-align: center;
+}
+img:not(:first-child) {
+display: inline-block;
+text-align: center;
+}
+
+img:after {
+content: ' ';
+display: block;
+}
+
+h1 {
+font-family: 'Comic Sans MS';
+font-size: 120px;
+text-align: center;
+margin: 0;
+}
+
+
+h2, li {
+font-family: 'Comic Sans MS';
+font-size: 40px;
+text-align: center;
+margin: 0;
+}
+li {font-family: arial;}
+
+td {
+text-align: center;
+}
+
+table {
+background: linear-gradient(to right, rgba(42, 123, 255, 0.5), rgba(177, 52, 44, 0.7));
+
+}
+
+tr {
+border-bottom: 1px solid gray;
+}
+
+button {
+position: absolute;
+bottom: 5px;
+}
+
+body {
+background:  rgba(255, 176, 33, 0.5);
+}
+
+html {
+background-size: 100%;
+}
+li:before { content: '🟃 '; }
+</STYLE>
+</HEAD>
+<BODY>
+<IMG SRC="/static/kids.jpg" style="margin-bottom: 12em;" />
+<IMG SRC="/static/dash-top.png" HEIGHT="50%" />
+<table WIDTH="100%" >
+<tr>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Комментарий</th>
+</tr>
+<tr>
+    <td>Василий</tD>
+    <td>Синичкин</td>
+    <td>ugra_querystring_is_the_new_cookie_e73a2fcb986d</td>
+</tr>
+</table>
+<form action="/dashboard" method="get">{% for item, value in args.items() %}<input type="hidden" name="{{item}}" value="{{value}}" />{% endfor %}
+    <button>Промо вид</button></form>
+</BODY>
+</HTML>
