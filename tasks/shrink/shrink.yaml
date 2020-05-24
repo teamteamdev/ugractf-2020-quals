@@ -8,3 +8,9 @@ description: |
     <p>Настолько нервничает, что её сотрудники взяли — и написали...
     психотерапевта. Если вы ещё не нервничаете, поговорите с ним.</p>
 generator: generate.py
+attachments_path: public/
+hints:
+    - name: emacs
+      points: 0
+      text: |
+        Добавлен <a href="/files/shrink/hint.jpg">скриншот</a>, иллюстрирующий процесс работы утилиты.
