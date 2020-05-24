@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Flag Extractors</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>Flags</h1>
+            {% if closed %}
+            <a href="/?closed=false" class="btn btn-primary">Show only fresh</a>
+            {% else %}
+            <a href="/?closed=true" class="btn btn-primary">Show everything</a>
+            {% endif %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Last message</th>
+                        <th scope="col">Go</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user, conversation in conversations %}
+                    {% if not conversation.closed or closed %}
+                    <tr {% if conversation.closed %}class="table-dark"{% endif %}>
+                        <td scope="row"><a href="/{{ user }}/">{{ user }}</a></td>
+                        <td>{{ conversation.last }}</td>
+                        <td>{{ conversation.message.text | safe }}</td>
+                        <td><a href="/{{ user }}/" class="btn btn-success">Go</a></td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </body>
+
+</html>
