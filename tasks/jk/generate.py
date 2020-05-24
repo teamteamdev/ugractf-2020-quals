@@ -37,9 +37,6 @@ def generate():
 
     flag = get_flag()
 
-    password = "".join([random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
-                        for _ in range(random.randint(12, 22))])
-
     with tempfile.TemporaryDirectory() as temp_dir:
         rar_cmd = f"rar a -rr{random.randint(4, 100)} -m{random.randint(0, 5)} unrar.rar unrar"
         open(os.path.join(temp_dir, "rar.sh"), "w").write(rar_cmd)
@@ -61,7 +58,7 @@ def generate():
             content[offset + n] ^= int(bits[i : i+8], 2)
         open(os.path.join(target_dir, "unrar.rar"), "wb").write(bytes(content))
 
-    json.dump({"flags": [flag], "substitutions": {"password": password}, "urls": []}, sys.stdout)
+    json.dump({"flags": [flag], "substitutions": {}, "urls": []}, sys.stdout)
 
 
 if __name__ == "__main__":
