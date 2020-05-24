@@ -10,3 +10,4 @@ daemon:    app/server.py
 daemon_socket: ege.sock
 daemon_socket_type: tcp
 daemon_socket_out_port: 17494
+submit_not_after: "2020-05-24T19:00:00Z"
