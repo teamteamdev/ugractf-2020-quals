@@ -30,7 +30,7 @@
 static const DWORD wnd_style = WS_OVERLAPPEDWINDOW & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX;
 static const WCHAR registry_key[] = {'S','o','f','t','w','a','r','e','\\',
                                      'A','g','r','o','G','a','m','e','D','e','v','\\',
-                                     'W','i','n','M','i','n','e',0};
+                                     'A','g','r','o','M','i','n','e',0};
 
 static const WCHAR minesW[] = {'M','i','n','e','s',0};
 
