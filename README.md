@@ -1,6 +1,6 @@
 # Ugra CTF Quals 2020
 
-23–24 мая 2020 года | [Сайт](https://2020.ugractf.ru)
+23–24 мая 2020 года | [Сайт](https://2020.ugractf.ru) | [Результаты](SCOREBOARD.md)
 
 ## Таски
 
