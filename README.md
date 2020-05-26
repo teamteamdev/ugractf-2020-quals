@@ -40,6 +40,7 @@
 ### За кадром
 
 [На лечение](tasks/therapy/) (ppc 150, nsychev)
+[Удалённая база данных](postmortem/UPDATE.md) (forensics 1337, nsychev)
 
 ## Команда соревнования
 
