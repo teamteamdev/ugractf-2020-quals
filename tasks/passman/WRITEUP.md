@@ -41,4 +41,4 @@ e97f7f887f0a33705f7fe76a9b32149e5380dfee6b16f279ff76f18756bd6c4e224ec523ec5514b1
 
 Однако, выяснение этого факта не требовалось для успешного решения задания.
 
-Флаг: **ugra_lets_forget_xor_forever_2ff9399d0341**.
+Флаг: **ugra_lets_forget_xor_forever_2ff9399d0341**

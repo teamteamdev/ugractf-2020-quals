@@ -45,4 +45,4 @@ q: 99360901961677214591044526636410730347838945605096236909384100179074958479771
 
 [Код для решения задания](decrypt.py)
 
-Флаг: **ugra_3rsa_is_secure_unless_you_get_bad_primes_cd68113d87efcde6**.
+Флаг: **ugra_3rsa_is_secure_unless_you_get_bad_primes_cd68113d87efcde6**

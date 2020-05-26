@@ -106,7 +106,7 @@ while True:
 Успіхів! 
 ```
 
-Флаг: **ugra_durnytsya_dribnitsya_c55508665747**.
+Флаг: **ugra_durnytsya_dribnitsya_c55508665747**
 
 ---
 

@@ -89,4 +89,4 @@ void sign_article() {
 
 Поскольку вручную за 30 секунд (сервер даёт ровно такой интервал времени на сессию) это сделать сложно, можно [автоматизировать процесс](exploit.py).
 
-Флаг: **ugra_zerobyte_does_not_count_9b0da3423e8d**.
+Флаг: **ugra_zerobyte_does_not_count_9b0da3423e8d**

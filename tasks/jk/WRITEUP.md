@@ -26,7 +26,7 @@ Done
 
 Результат операции XOR содержит окружённый нулевыми байтами флаг.
 
-Флаг: **ugra_when_i_was_this_small_it_already_had_a_beard_that_long_d9b26c811561**.
+Флаг: **ugra_when_i_was_this_small_it_already_had_a_beard_that_long_d9b26c811561**
 
 ## Изначальный план
 

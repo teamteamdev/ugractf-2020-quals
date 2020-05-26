@@ -22,4 +22,4 @@
 
 ![Применили фильтры](writeup/qr.png)
 
-Флаг: **ugra_no_firewood_required_for_now_e684b810bef5**.
+Флаг: **ugra_no_firewood_required_for_now_e684b810bef5**

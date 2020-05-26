@@ -8,4 +8,4 @@
 
 С помощью команд `ls` и `cat` можно найти файл `config.ini` и прочитать его содержимое, включая флаг.
 
-Флаг: **ugra_good_languages_do_not_force_you_to_rely_on_bash_2bc3a57a2afd**.
+Флаг: **ugra_good_languages_do_not_force_you_to_rely_on_bash_2bc3a57a2afd**

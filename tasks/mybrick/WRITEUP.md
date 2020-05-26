@@ -47,4 +47,4 @@ $ curl -X POST -H "Content-Type: application/json" https://mybrick.q.2020.ugract
 
 Мы сразу же получаем пост с флагом.
 
-Флаг: **ugra_escape_not_only_sql_48ae250f3a82**.
+Флаг: **ugra_escape_not_only_sql_48ae250f3a82**

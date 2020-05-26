@@ -44,4 +44,4 @@
 
 Осталось собрать флаг из полученных кусочков.
 
-Флаг: **ugra_arubaito_toranpu_pasokon_180740085092**.
+Флаг: **ugra_arubaito_toranpu_pasokon_180740085092**

@@ -27,7 +27,7 @@
 
 Снова видим заветное ~~щачло~~ _засло_, аккуратно переписываем.
 
-Флаг: **ugra_like_and_subscribe_adacddfeaaba**.
+Флаг: **ugra_like_and_subscribe_adacddfeaaba**
 
 ## Постмортем
 

@@ -26,4 +26,4 @@ E F G H I
 
 Кстати, можно заметить, что шифр получился симметричным.
 
-Флаг: **ugra_rituals_may_vary_and_so_do_quirks_eecbedfcffab**.
+Флаг: **ugra_rituals_may_vary_and_so_do_quirks_eecbedfcffab**

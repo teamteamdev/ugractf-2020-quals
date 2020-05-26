@@ -26,4 +26,4 @@
 
 ![Полученная таблица](writeup/table.png)
 
-Флаг: **ugra_does_one_like_new_3d_episodes_099bcf288**.
+Флаг: **ugra_does_one_like_new_3d_episodes_099bcf288**

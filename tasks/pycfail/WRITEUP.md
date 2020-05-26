@@ -112,4 +112,4 @@ if __name__ == '__main__':
 
 Выполнение этого кода также приводит к получению флага.
 
-Флаг: **ugra_weird_gcd_calculation_a95eb29327c3**.
+Флаг: **ugra_weird_gcd_calculation_a95eb29327c3**

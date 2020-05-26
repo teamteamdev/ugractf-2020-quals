@@ -90,7 +90,7 @@ typedef struct {
 1. Удаляем заметку 0.
 2. Читаем заметку 0.
 
-Флаг: **ugra_nullptr_is_a_zero_ab198875fc77**.
+Флаг: **ugra_nullptr_is_a_zero_ab198875fc77**
 
 <hr/>
 

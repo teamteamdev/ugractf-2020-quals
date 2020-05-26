@@ -18,4 +18,4 @@ data.img: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID "mkfs.fat", sectors/cl
 
 В месте электронной подписи видим base64 от флага.
 
-Флаг: **ugra_vim_saves_the_world_e684b810bef535**.
+Флаг: **ugra_vim_saves_the_world_e684b810bef535**

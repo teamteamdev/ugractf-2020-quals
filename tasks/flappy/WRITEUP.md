@@ -8,4 +8,4 @@
 
 ![Полное прохождение игры](images/walkthrough.gif)
 
-Флаг: **ugra_moore_is_flapping_in_his_dreams_365bd0c7e01414baa47423338ec**.
+Флаг: **ugra_moore_is_flapping_in_his_dreams_365bd0c7e01414baa47423338ec**

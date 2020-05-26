@@ -12,4 +12,4 @@
 
 (Да, ~~щачло~~ _засло_ по-венгерски — флаг.)
 
-Флаг: **ugra_do_the_guys_a_favor_b8a4c70f76a8**.
+Флаг: **ugra_do_the_guys_a_favor_b8a4c70f76a8**
