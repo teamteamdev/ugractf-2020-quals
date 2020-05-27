@@ -52,7 +52,7 @@ for bd in bytes_detected:
         bd[0] = 2
     if bd[0] == 2:
         bd[1] = min(bd[1], 5)
-    if (bd[0], bd[1]) == (2, 5)
+    if (bd[0], bd[1]) == (2, 5):
         bd[2] = min(bd[2], 5)
 
 data = [(bd[0] * 100 + bd[1] * 10 + bd[2]) for bd in bytes_detected]
